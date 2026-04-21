@@ -254,28 +254,8 @@ footer span{color:var(--gold)}
 .target-card .target-ex{display:flex;align-items:flex-start;gap:10px;font-size:0.82rem;color:rgba(255,255,255,0.55)}
 .target-card .target-ex span{color:var(--gold);flex-shrink:0}
 
-/* ─── BOOKING SLOTS ─── */
-.booking-wrap{max-width:780px;margin:0 auto}
-.booking-badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#f97316;border:1px solid rgba(249,115,22,0.35);padding:5px 16px;border-radius:100px;background:rgba(249,115,22,0.06);margin-bottom:24px}
-.booking-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#f97316;animation:blink 1.2s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.slots-container{display:flex;flex-direction:column;gap:16px}
-.slot-day{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:18px;overflow:hidden}
-.slot-day-header{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid rgba(255,255,255,0.05)}
-.slot-day-date{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--white)}
-.slot-day-info{font-size:0.75rem;color:var(--text3);letter-spacing:0.06em}
-.slot-day-slots{padding:16px 22px;display:flex;flex-wrap:wrap;gap:10px}
-.slot-btn{padding:10px 20px;border-radius:100px;font-size:0.82rem;letter-spacing:0.05em;cursor:pointer;transition:all 0.2s;font-family:var(--sans);border:1px solid rgba(200,169,90,0.35);background:rgba(200,169,90,0.06);color:var(--gold2);}
-.slot-btn:hover{background:rgba(200,169,90,0.15);border-color:var(--gold);transform:scale(1.03)}
-.slot-btn.selected{background:linear-gradient(135deg,var(--gold),#a87a20);color:var(--ink);border-color:transparent;font-weight:500}
-.slot-btn.booked{background:rgba(255,255,255,0.02);border-color:rgba(255,255,255,0.04);color:rgba(255,255,255,0.18);cursor:not-allowed;text-decoration:line-through;font-size:0.75rem}
-.slot-day.full-booked .slot-day-header{opacity:0.4}
-.slot-day.full-booked .slot-day-slots{padding:14px 22px}
-.slot-day-full-label{font-size:0.8rem;color:rgba(255,100,100,0.55);display:flex;align-items:center;gap:6px}
-.booking-confirm{margin-top:28px;display:none;text-align:center}
-.booking-confirm.show{display:block}
-.booking-confirm p{font-size:0.9rem;color:rgba(255,255,255,0.65);margin-bottom:18px}
-.booking-confirm p strong{color:var(--gold2)}
+/* ─── CALENDLY EMBED ─── */
+.calendly-wrap{max-width:780px;margin:52px auto 0;border-radius:20px;overflow:hidden;border:1px solid rgba(200,169,90,0.2);background:rgba(255,255,255,0.02)}
 </style>
 </head>
 <body>
@@ -639,87 +619,13 @@ footer span{color:var(--gold)}
       <p>Kami sangat yakin dengan proses ini. <strong style="color:var(--gold2)">Jika Anda tidak merasakan manfaat selama program berlangsung, kami kembalikan investasi Anda sepenuhnya.</strong> Tidak ada risiko untuk Anda. Yang ada hanya peluang untuk berubah.</p>
     </div>
 
-    <!-- BOOKING SLOTS -->
-    <div class="booking-wrap reveal" id="booking-section" style="margin-top:52px;text-align:center">
-      <div class="booking-badge">Slot Tersedia · April 2026</div>
-      <p style="color:var(--text3);font-size:0.88rem;margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto">el Reyzandra saat ini hanya membuka <strong style="color:var(--white)">3 slot discovery call</strong> di bulan ini. Pilih waktu yang tersedia untuk Anda.</p>
-
-      <div class="slots-container">
-
-        <!-- 23 April -->
-        <div class="slot-day">
-          <div class="slot-day-header">
-            <span class="slot-day-date">Rabu, 23 April 2026</span>
-            <span class="slot-day-info">4 slot tersedia</span>
-          </div>
-          <div class="slot-day-slots">
-            <button class="slot-btn" onclick="selectSlot(this,'Rabu 23 April 2026','13.00 WIB')">13.00 WIB</button>
-            <button class="slot-btn" onclick="selectSlot(this,'Rabu 23 April 2026','14.00 WIB')">14.00 WIB</button>
-            <button class="slot-btn" onclick="selectSlot(this,'Rabu 23 April 2026','15.00 WIB')">15.00 WIB</button>
-            <button class="slot-btn" onclick="selectSlot(this,'Rabu 23 April 2026','20.00 WIB')">20.00 WIB</button>
-          </div>
-        </div>
-
-        <!-- 24 April - PENUH -->
-        <div class="slot-day full-booked">
-          <div class="slot-day-header">
-            <span class="slot-day-date">Kamis, 24 April 2026</span>
-            <span class="slot-day-info" style="color:rgba(255,100,100,0.5)">Penuh</span>
-          </div>
-          <div class="slot-day-slots">
-            <span class="slot-day-full-label">✗ Semua slot sudah terisi untuk tanggal ini</span>
-          </div>
-        </div>
-
-        <!-- 25 April -->
-        <div class="slot-day">
-          <div class="slot-day-header">
-            <span class="slot-day-date">Jumat, 25 April 2026</span>
-            <span class="slot-day-info">4 slot tersedia</span>
-          </div>
-          <div class="slot-day-slots">
-            <button class="slot-btn" onclick="selectSlot(this,'Jumat 25 April 2026','13.00 WIB')">13.00 WIB</button>
-            <button class="slot-btn" onclick="selectSlot(this,'Jumat 25 April 2026','14.00 WIB')">14.00 WIB</button>
-            <button class="slot-btn" onclick="selectSlot(this,'Jumat 25 April 2026','15.00 WIB')">15.00 WIB</button>
-            <button class="slot-btn" onclick="selectSlot(this,'Jumat 25 April 2026','20.00 WIB')">20.00 WIB</button>
-          </div>
-        </div>
-
-        <!-- 26-28 April - PENUH -->
-        <div class="slot-day full-booked">
-          <div class="slot-day-header">
-            <span class="slot-day-date">Sabtu – Senin, 26–28 April 2026</span>
-            <span class="slot-day-info" style="color:rgba(255,100,100,0.5)">Penuh</span>
-          </div>
-          <div class="slot-day-slots">
-            <span class="slot-day-full-label">✗ Semua slot sudah terisi untuk tanggal ini</span>
-          </div>
-        </div>
-
-        <!-- 29 April -->
-        <div class="slot-day">
-          <div class="slot-day-header">
-            <span class="slot-day-date">Selasa, 29 April 2026</span>
-            <span class="slot-day-info">4 slot tersedia</span>
-          </div>
-          <div class="slot-day-slots">
-            <button class="slot-btn" onclick="selectSlot(this,'Selasa 29 April 2026','13.00 WIB')">13.00 WIB</button>
-            <button class="slot-btn" onclick="selectSlot(this,'Selasa 29 April 2026','14.00 WIB')">14.00 WIB</button>
-            <button class="slot-btn" onclick="selectSlot(this,'Selasa 29 April 2026','15.00 WIB')">15.00 WIB</button>
-            <button class="slot-btn" onclick="selectSlot(this,'Selasa 29 April 2026','20.00 WIB')">20.00 WIB</button>
-          </div>
-        </div>
-
+    <!-- CALENDLY EMBED -->
+    <div class="calendly-wrap reveal" id="booking-section">
+      <div class="calendly-inline-widget"
+        data-url="https://calendly.com/elvisiondragon/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=07060f&text_color=f0edf8&primary_color=c8a95a"
+        style="min-width:320px;height:700px">
       </div>
-
-      <!-- CONFIRM AFTER SLOT SELECTED -->
-      <div class="booking-confirm" id="booking-confirm">
-        <p>Anda memilih: <strong id="selected-slot-display"></strong><br>Klik tombol di bawah untuk konfirmasi ke tim kami via WhatsApp.</p>
-        <a id="booking-wa-link" href="#" target="_blank" class="wa-btn">
-          <svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.445h.006c6.585 0 11.946-5.336 11.949-11.896.002-3.177-1.24-6.165-3.48-8.448zM12.045 21.785h-.005c-1.774 0-3.514-.474-5.03-1.37l-.361-.214-3.741.976.997-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.893-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.882zm5.413-7.402c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-          Konfirmasi Slot via WhatsApp
-        </a>
-      </div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </div>
   </div>
 </section>
@@ -954,25 +860,6 @@ const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* SLOT BOOKING */
-function selectSlot(btn, date, time) {
-  // Deselect all
-  document.querySelectorAll('.slot-btn.selected').forEach(b => b.classList.remove('selected'));
-  // Mark this one
-  btn.classList.add('selected');
-  // Build WhatsApp link
-  const msg = encodeURIComponent(`Hai kak Renata, saya mau book Discovery Call pada ${date} jam ${time}. Saya sudah baca info Sesi eL Vision dan ingin lanjut ke tahap berikutnya.`);
-  const waLink = `https://wa.me/62895325633487?text=${msg}`;
-  // Update confirm UI
-  document.getElementById('selected-slot-display').textContent = `${date} · ${time}`;
-  document.getElementById('booking-wa-link').href = waLink;
-  // Show confirm block
-  const confirm = document.getElementById('booking-confirm');
-  confirm.classList.add('show');
-  // Smooth scroll to confirm button
-  setTimeout(() => confirm.scrollIntoView({behavior:'smooth', block:'center'}), 150);
-}
 </script>
 </body>
 </html>
