@@ -646,15 +646,46 @@ footer span{color:var(--gold)}
 
 <div class="divider z1"></div>
 
-<!-- VIDEO TESTIMONIES -->
-<section class="section z1">
+<!-- VIDEO TESTIMONIES — KESEHATAN -->
+<section class="section z1" id="testi-kesehatan">
   <div class="container">
     <div class="sec-center reveal">
-      <div class="tag" style="margin-bottom:18px">Testimoni Video</div>
-      <h2 class="sec-h">Dengarkan langsung dari mereka</h2>
+      <div class="tag" style="margin-bottom:14px">Study Case · Kesehatan</div>
+      <h2 class="sec-h">Dari kondisi yang dianggap mustahil<br><em style="font-style:italic;color:var(--gold2)">menuju pemulihan nyata</em></h2>
+      <p style="color:var(--text3);margin-top:12px;font-size:0.9rem;max-width:560px;margin-left:auto;margin-right:auto">Ketika dokter sudah angkat tangan, sistem bawah sadar masih bisa diprogram ulang untuk memulihkan tubuh dari dalam.</p>
       <div class="gold-line" style="margin-top:14px"></div>
     </div>
-    <div class="video-grid" id="video-grid"></div>
+    <div class="video-grid" id="video-grid-health"></div>
+  </div>
+</section>
+
+<div class="divider z1"></div>
+
+<!-- VIDEO TESTIMONIES — HUBUNGAN -->
+<section class="section z1" id="testi-hubungan">
+  <div class="container">
+    <div class="sec-center reveal">
+      <div class="tag" style="margin-bottom:14px">Pola Keharmonisan Hubungan</div>
+      <h2 class="sec-h">Relasi yang berulang rusak<br><em style="font-style:italic;color:var(--gold2)">akhirnya bisa diperbaiki dari akarnya</em></h2>
+      <p style="color:var(--text3);margin-top:12px;font-size:0.9rem;max-width:560px;margin-left:auto;margin-right:auto">Bukan soal siapa yang salah. Tapi pola di dalam diri yang terus menciptakan dinamika yang sama.</p>
+      <div class="gold-line" style="margin-top:14px"></div>
+    </div>
+    <div class="video-grid" id="video-grid-relation"></div>
+  </div>
+</section>
+
+<div class="divider z1"></div>
+
+<!-- VIDEO TESTIMONIES — KARIER & FINANSIAL -->
+<section class="section z1" id="testi-karier">
+  <div class="container">
+    <div class="sec-center reveal">
+      <div class="tag" style="margin-bottom:14px">Karier &amp; Finansial</div>
+      <h2 class="sec-h">Bukan strategi baru yang dibutuhkan<br><em style="font-style:italic;color:var(--gold2)">tapi sistem dalam diri yang dibersihkan</em></h2>
+      <p style="color:var(--text3);margin-top:12px;font-size:0.9rem;max-width:560px;margin-left:auto;margin-right:auto">Ketika akar hambatan tak kasat mata dicabut, pertumbuhan terjadi tanpa harus dipaksa.</p>
+      <div class="gold-line" style="margin-top:14px"></div>
+    </div>
+    <div class="video-grid" id="video-grid-career"></div>
   </div>
 </section>
 
@@ -718,15 +749,77 @@ const quotes=[
   "Saya kira stres adalah harga sukses. Ternyata itu hanya efek samping dari sistem bawah sadar yang salah set."
 ];
 
-const testimonies=[
-  {name:"Arif – Mind Method",title:"Penyintas Kanker Otak Stage 4",description:"Stop Battling Your Health: Try the Mind Method for Lasting Recovery",localVideo:"/assets/testimony/arif_interview_en.mp4",poster:"/assets/testimony/arif_interview_en.jpg"},
-  {name:"Arif – Cellular Recovery",title:"Mindset Transformation",description:"The Secret to Cellular Recovery: What Nobody Tells You About Healing",localVideo:"/assets/testimony/arif_en.mp4",poster:"/assets/testimony/arif_en.jpg"},
-  {name:"Habib Umar Assegaf",title:"Ustadz",description:"Spiritual Elevation: A Testimony of Faith and Mental Clarity",localVideo:"/assets/testimony/habib.mp4",poster:"/assets/testimony/habib.jpg"},
-  {name:"Pak AGUS SH., MH.",title:"Kepala Intelijen",description:"Professional Excellence & Inner Balance: A High-Achiever's Perspective",localVideo:"/assets/testimony/agus.mp4",poster:"/assets/testimony/agus.jpg"},
-  {name:"Dr. Gumilar",title:"Hypnotherapist",description:"A Medical Endorsement: Why Mindset is the Ultimate Key to Recovery",localVideo:"/assets/testimony/gumilar.mp4",poster:"/assets/testimony/gumilar.jpg"},
-  {name:"eL Vision – Magnet",title:"Problem Solver",description:"The Root of the Solution: How I Stopped Managing Problems and Started Solving Them",localVideo:"/assets/testimony/magnet.mp4",poster:"/assets/testimony/magnet.jpg"},
-  {name:"Lena",title:"Student",description:"Manifesting Abundance: Moving from Scarcity to Being Chased by Prosperity",localVideo:"/assets/testimony/lena.mp4",poster:"/assets/testimony/lena.jpg"},
-  {name:"Gen Z",title:"Modern Lifestyle",description:"The Ultimate Mental Edge: Why This is the Modern Life Hack We've Been Searching For",localVideo:"/assets/testimony/gen_z.mp4",poster:"/assets/testimony/gen_z.jpg"}
+const testimoniesHealth=[
+  {
+    name:"Arif",
+    title:"Penyintas Kanker Otak Stadium 4",
+    before:"Divonis kanker otak stadium 4. Dokter menyatakan kondisi kritis dan peluang sangat kecil. Secara mental, Arif berada di titik paling gelap — penuh ketakutan dan pasrah pada keadaan.",
+    after:"Setelah menerapkan metode bawah sadar bersama eL Vision, tubuh mulai merespons secara berbeda. Proses pemulihan yang dianggap mustahil mulai berjalan — sistem dalam diri diprogram ulang untuk mendukung pemulihan.",
+    localVideo:"/assets/testimony/arifindo/Arif_interview_indo_comp.mp4",
+    poster:"/assets/testimony/arifindo/arif_interview_indo.jpg"
+  },
+  {
+    name:"Arif – Proses Pemulihan",
+    title:"Metode Sel & Bawah Sadar",
+    before:"Tubuh melemah, keluhan fisik intens, dan obat-obatan tidak memberikan hasil yang cukup. Ada rasa frustrasi mendalam karena usaha medis sudah maksimal tapi kondisi tidak membaik.",
+    after:"Dengan mengintegrasikan metode pemrograman bawah sadar, Arif mengalami perubahan pada level seluler. Vitalitas kembali, ketenangan hadir, dan tubuh merespons secara positif.",
+    localVideo:"/assets/testimony/arifindo/arifindo_comp.mp4",
+    poster:"/assets/testimony/arifindo/arifindo.jpeg"
+  }
+];
+
+const testimoniesRelation=[
+  {
+    name:"Dr. Gumilar",
+    title:"Hypnotherapist & Praktisi Kesehatan",
+    before:"Meskipun telah mempelajari berbagai metode terapi, masih ada hambatan pola relasi yang tidak bisa diselesaikan secara konvensional. Hubungan terasa stagnan dan ada jarak yang tidak dapat dijembatani.",
+    after:"Setelah sesi eL Vision, Dr. Gumilar menemukan cara kerja yang jauh lebih dalam — pola relasi berubah, komunikasi mengalir lebih alami, dan keselarasan dalam hubungan personal maupun profesional meningkat drastis.",
+    localVideo:"/assets/testimony/gumilar.mp4",
+    poster:"/assets/testimony/gumilar.jpg"
+  },
+  {
+    name:"Pak Agus SH., MH.",
+    title:"Kepala Intelijen",
+    before:"Di posisi kepemimpinan tinggi dengan tekanan luar biasa, hubungan keluarga dan tim kerja seringkali terkuras. Konflik tersembunyi dan ketidakseimbangan antara karier dan relasi personal menjadi beban berat.",
+    after:"Setelah program eL Vision, Pak Agus menemukan keseimbangan antara ketegasan profesional dan ketenangan personal. Hubungan yang sebelumnya terasa berat menjadi sumber kekuatan — bukan lagi sumber stres.",
+    localVideo:"/assets/testimony/agus.mp4",
+    poster:"/assets/testimony/agus.jpg"
+  }
+];
+
+const testimoniesCareer=[
+  {
+    name:"Habib Umar Assegaf",
+    title:"Ustadz & Tokoh Spiritual",
+    before:"Meski aktif dalam dakwah, ada kegelisahan batin yang menghambat dampak yang seharusnya lebih luas. Energi terkuras dan ada hambatan tak kasat mata dalam pertumbuhan pengaruh.",
+    after:"Setelah sesi eL Vision, ketenangan batin yang lebih dalam hadir. Dakwah mengalir lebih natural, pengaruh meluas, dan setiap aktivitas terasa lebih bermakna karena dilakukan dari tempat yang benar secara internal.",
+    localVideo:"/assets/testimony/habib.mp4",
+    poster:"/assets/testimony/habib.jpg"
+  },
+  {
+    name:"eL Vision – Magnet",
+    title:"Problem Solver & Mentor",
+    before:"Masalah datang silih berganti — setiap satu diselesaikan, yang lain muncul. Ada pola tak kasat mata yang terus mengulang siklus hambatan, meski secara strategis sudah melakukan semua hal yang benar.",
+    after:"Setelah akar masalah di level bawah sadar ditemukan dan dicabut, siklus hambatan berhenti. Solusi datang lebih mudah dan peluang muncul dari arah yang tidak terduga.",
+    localVideo:"/assets/testimony/magnet.mp4",
+    poster:"/assets/testimony/magnet.jpg"
+  },
+  {
+    name:"Lena",
+    title:"Mahasiswa & Wirausaha Muda",
+    before:"Terjebak dalam pola kekurangan — kerja keras tapi hasil tidak proporsional. Ada keyakinan bawah sadar tentang kelayakan dan uang yang terus menarik ke kondisi scarcity meski usaha sudah maksimal.",
+    after:"Setelah sesi eL Vision, pola kekurangan berubah menjadi magnetisme. Rezeki mulai datang dari arah yang tidak diprediksi dan peluang kolaborasi terbuka secara organik.",
+    localVideo:"/assets/testimony/lena.mp4",
+    poster:"/assets/testimony/lena.jpg"
+  },
+  {
+    name:"Gen Z",
+    title:"Generasi Digital & Modern",
+    before:"Di tengah banjir informasi dan tekanan sosial media, mudah merasa overwhelmed dan tidak jelas arahnya. Karier terasa tidak punya tujuan meski hard skill sudah memadai.",
+    after:"Setelah eL Vision, kejelasan muncul dari dalam. Keputusan karier menjadi lebih tegas, tidak mudah terdistraksi, dan ada sense of purpose yang membuat setiap langkah terasa bermakna.",
+    localVideo:"/assets/testimony/gen_z.mp4",
+    poster:"/assets/testimony/gen_z.jpg"
+  }
 ];
 
 const communityImages=[
@@ -782,34 +875,48 @@ quotes.forEach(q=>{
 });
 
 /* VIDEOS */
-const vg=document.getElementById('video-grid');
 let playingVideo=null;
-testimonies.forEach((t,i)=>{
-  const card=document.createElement('div');
-  card.className='video-card reveal';
-  card.innerHTML=`
-    <div class="video-wrap">
-      <video id="vid-${i}" src="${t.localVideo}?v=1.0.5" poster="${t.poster}" preload="metadata" controls playsinline></video>
-      <div class="play-overlay" id="ov-${i}">
-        <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+function renderVideos(arr, containerId){
+  const vg=document.getElementById(containerId);
+  if(!vg)return;
+  arr.forEach((t,i)=>{
+    const uid=containerId+'-'+i;
+    const card=document.createElement('div');
+    card.className='video-card reveal';
+    card.innerHTML=`
+      <div class="video-wrap">
+        <video id="vid-${uid}" src="${t.localVideo}?v=1.0.5" poster="${t.poster}" preload="metadata" controls playsinline></video>
+        <div class="play-overlay" id="ov-${uid}">
+          <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        </div>
       </div>
-    </div>
-    <div class="video-info">
-      <p class="vname">${t.name}</p>
-      ${t.title?`<p class="vrole">${t.title}</p>`:''}
-      ${t.description?`<p class="vdesc">${t.description}</p>`:''}
-    </div>`;
-  vg.appendChild(card);
-  const vid=card.querySelector(`#vid-${i}`);
-  const ov=card.querySelector(`#ov-${i}`);
-  ov.addEventListener('click',()=>{
-    if(playingVideo&&playingVideo!==vid)playingVideo.pause();
-    vid.play();ov.style.display='none';playingVideo=vid;
+      <div class="video-info">
+        <p class="vname">${t.name}</p>
+        ${t.title?`<p class="vrole">${t.title}</p>`:''}
+        ${t.before?`<div style="margin-top:14px;padding:14px 16px;background:rgba(255,100,100,0.05);border:1px solid rgba(255,100,100,0.12);border-radius:12px">
+          <p style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,120,120,0.7);margin-bottom:6px">Sebelum</p>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.65">${t.before}</p>
+        </div>`:''}
+        ${t.after?`<div style="margin-top:10px;padding:14px 16px;background:rgba(200,169,90,0.05);border:1px solid rgba(200,169,90,0.15);border-radius:12px">
+          <p style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Sesudah</p>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);line-height:1.65">${t.after}</p>
+        </div>`:''}
+      </div>`;
+    vg.appendChild(card);
+    const vid=card.querySelector(`#vid-${uid}`);
+    const ov=card.querySelector(`#ov-${uid}`);
+    ov.addEventListener('click',()=>{
+      if(playingVideo&&playingVideo!==vid)playingVideo.pause();
+      vid.play();ov.style.display='none';playingVideo=vid;
+    });
+    vid.addEventListener('pause',()=>ov.style.display='flex');
+    vid.addEventListener('ended',()=>ov.style.display='flex');
+    vid.addEventListener('play',()=>ov.style.display='none');
   });
-  vid.addEventListener('pause',()=>ov.style.display='flex');
-  vid.addEventListener('ended',()=>ov.style.display='flex');
-  vid.addEventListener('play',()=>ov.style.display='none');
-});
+}
+renderVideos(testimoniesHealth,'video-grid-health');
+renderVideos(testimoniesRelation,'video-grid-relation');
+renderVideos(testimoniesCareer,'video-grid-career');
 
 /* COMMUNITY */
 const cg=document.getElementById('community-grid');
