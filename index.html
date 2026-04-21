@@ -191,6 +191,55 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 28px;display:fl
 
 footer{position:relative;z-index:1;text-align:center;padding:48px 28px;border-top:1px solid rgba(255,255,255,0.06);color:var(--text3);font-size:0.82rem}
 footer span{color:var(--gold)}
+
+/* ─── INVESTMENT PROCESS ─── */
+.process-timeline{max-width:720px;margin:52px auto 0;position:relative;padding-left:40px}
+.process-timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),rgba(200,169,90,0.15))}
+.process-step{position:relative;margin-bottom:36px;padding-bottom:4px}
+.process-step:last-child{margin-bottom:0}
+.process-step::before{content:'';position:absolute;left:-29px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 16px rgba(200,169,90,0.5);border:2px solid var(--ink)}
+.process-step-tag{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:500}
+.process-step h3{font-family:var(--serif);font-size:1.25rem;font-weight:400;margin-bottom:8px;color:var(--white)}
+.process-step p{font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.75}
+
+/* ─── SUPER RELAX ANALOGY ─── */
+.analogy-block{max-width:700px;margin:0 auto;margin-top:56px}
+.analogy-visual{display:flex;align-items:stretch;gap:0;border-radius:20px;overflow:hidden;margin-bottom:28px}
+.analogy-side{flex:1;padding:32px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.analogy-side.problem{background:rgba(255,60,60,0.06);border:1px solid rgba(255,60,60,0.15)}
+.analogy-side.normal{background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08)}
+.analogy-side.super{background:rgba(200,169,90,0.06);border:1px solid rgba(200,169,90,0.25)}
+.analogy-num{font-family:var(--serif);font-size:2.8rem;font-weight:600;line-height:1}
+.analogy-num.red{color:rgba(255,100,100,0.8)}
+.analogy-num.dim{color:var(--text3)}
+.analogy-num.gold{color:var(--gold2)}
+.analogy-lbl{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3)}
+.analogy-verdict{font-size:0.78rem;margin-top:4px;font-weight:500}
+.analogy-verdict.fail{color:rgba(255,100,100,0.7)}
+.analogy-verdict.pass{color:var(--gold)}
+.analogy-caption{text-align:center;font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.8;font-style:italic}
+@media(max-width:600px){.analogy-visual{flex-direction:column}.analogy-num{font-size:2.2rem}}
+
+/* ─── WHAT YOU GET ─── */
+.get-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:52px}
+.get-card{background:rgba(255,255,255,0.03);border-radius:20px;padding:32px 28px;border:1px solid rgba(200,169,90,0.15);transition:transform 0.3s,border-color 0.3s}
+.get-card:hover{transform:translateY(-4px);border-color:rgba(200,169,90,0.45)}
+.get-card .get-icon{font-size:2rem;margin-bottom:16px;display:block}
+.get-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:400;margin-bottom:10px;color:var(--gold2)}
+.get-card p{font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.75}
+
+/* ─── GUARANTEE ─── */
+.guarantee-box{max-width:680px;margin:52px auto 0;border-radius:24px;padding:40px 36px;background:linear-gradient(160deg,rgba(200,169,90,0.08) 0%,rgba(10,8,18,0.95) 60%);border:1px solid rgba(200,169,90,0.35);text-align:center;position:relative;overflow:hidden}
+.guarantee-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.guarantee-shield{font-size:3.5rem;margin-bottom:16px;display:block}
+.guarantee-box h3{font-family:var(--serif);font-size:1.6rem;font-weight:400;margin-bottom:14px;color:var(--gold2)}
+.guarantee-box p{font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:500px;margin:0 auto}
+
+/* ─── SCARCITY CTA ─── */
+.scarcity-block{max-width:700px;margin:0 auto;margin-top:48px;background:rgba(255,255,255,0.025);border:1px solid rgba(200,169,90,0.2);border-radius:20px;padding:36px 32px;text-align:center}
+.scarcity-block .scarcity-warn{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,180,60,0.9);border:1px solid rgba(255,180,60,0.3);padding:5px 16px;border-radius:100px;background:rgba(255,180,60,0.06);margin-bottom:18px}
+.scarcity-block h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:12px;color:var(--white)}
+.scarcity-block p{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:24px}
 </style>
 </head>
 <body>
@@ -385,6 +434,140 @@ footer span{color:var(--gold)}
 
 <div class="divider z1"></div>
 
+<!-- ═══ INVESTMENT PROCESS ═══ -->
+<section class="section z1" id="investasi">
+  <div class="container">
+    <div class="sec-center reveal">
+      <div class="tag" style="margin-bottom:18px">Apa yang Anda Dapatkan</div>
+      <h2 class="sec-h">Ini bukan seminar.<br><em style="font-style:italic;color:var(--gold2)">Ini penanganan langsung.</em></h2>
+      <p style="color:var(--text3);margin-top:14px;font-size:0.92rem;max-width:560px;margin-left:auto;margin-right:auto">Setiap rupiah yang Anda investasikan mengarah pada satu hal: <strong style="color:var(--white)">menemukan dan menyelesaikan akar masalah Anda</strong> — bukan mengelolanya seumur hidup.</p>
+      <div class="gold-line" style="margin-top:18px"></div>
+    </div>
+
+    <!-- PROCESS TIMELINE -->
+    <div class="process-timeline reveal">
+      <div class="process-step">
+        <div class="process-step-tag">Langkah 1 · Hari Pertama</div>
+        <h3>Assessment Mendalam</h3>
+        <p>Tim kami akan memulai assessment menyeluruh untuk menemukan <strong style="color:var(--white)">di mana titik pasti letak masalah Anda</strong>. Bukan gejala. Bukan tebakan. Tapi akar yang selama ini tidak terlihat — yang membuat Anda terus berputar di titik yang sama.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-tag">Langkah 2 · Dalam 1×24 Jam</div>
+        <h3>Workbook & Program Disusun Khusus untuk Anda</h3>
+        <p>Setelah akar masalah ditemukan, <strong style="color:var(--white)">workbook dan program personal Anda disusun dalam 1×24 jam</strong>. Tidak ada template. Semuanya dirancang khusus berdasarkan kondisi unik Anda — dan Anda langsung mulai praktek bersama Founder.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-tag">Langkah 3 · Praktek Langsung</div>
+        <h3>Sesi 1-on-1 dengan el Reyzandra</h3>
+        <p>Sesi langsung dengan Founder <strong style="color:var(--white)">1× seminggu selama 1 jam penuh</strong> — tanya jawab, interview, dan penanganan mendalam. Bukan ceramah satu arah. Ini adalah ruang privat Anda untuk menyelesaikan apa yang selama ini tertunda.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-tag">Akses Darurat</div>
+        <h3>Call 24 Jam Langsung ke Founder</h3>
+        <p>Jika ada situasi mendesak, Anda memiliki <strong style="color:var(--white)">akses call 24 jam langsung ke el Reyzandra</strong>. Tidak ada antrian. Tidak ada admin. Langsung ke orang yang menangani Anda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider z1"></div>
+
+<!-- ═══ SUPER RELAX ANALOGY ═══ -->
+<section class="section z1">
+  <div class="container">
+    <div class="sec-center reveal">
+      <div class="tag" style="margin-bottom:18px">Minggu Pertama</div>
+      <h2 class="sec-h">Anda akan mencapai titik yang disebut<br><em style="font-style:italic;color:var(--gold2)">Super Relax.</em></h2>
+    </div>
+
+    <div class="analogy-block reveal">
+      <div class="analogy-visual">
+        <div class="analogy-side problem">
+          <div class="analogy-lbl">Tekanan Masalah</div>
+          <div class="analogy-num red">1000</div>
+          <div class="analogy-lbl">poin tekanan</div>
+        </div>
+        <div class="analogy-side normal">
+          <div class="analogy-lbl">Relax Biasa</div>
+          <div class="analogy-num dim">500</div>
+          <div class="analogy-verdict fail">✗ Tidak cukup</div>
+        </div>
+        <div class="analogy-side super">
+          <div class="analogy-lbl">Super Relax</div>
+          <div class="analogy-num gold">2000</div>
+          <div class="analogy-verdict pass">✦ Menetralkan total</div>
+        </div>
+      </div>
+      <p class="analogy-caption">Ketika masalah Anda bertekanan 1000, relax biasa yang hanya 500 <strong style="color:rgba(255,100,100,0.8)">tidak akan pernah cukup</strong>. Anda butuh ketenangan di level 2000 — dan itulah yang terjadi di minggu pertama. <strong style="color:var(--gold2)">Bukan menenangkan pikiran. Tapi mengubah kapasitas sistem Anda.</strong></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider z1"></div>
+
+<!-- ═══ WHAT YOU GET ═══ -->
+<section class="section z1">
+  <div class="container">
+    <div class="sec-center reveal">
+      <div class="tag" style="margin-bottom:18px">Ringkasan Investment</div>
+      <h2 class="sec-h">Semua yang Anda terima</h2>
+      <div class="gold-line" style="margin-top:14px"></div>
+    </div>
+    <div class="get-grid">
+      <div class="get-card reveal">
+        <span class="get-icon">🔍</span>
+        <h3>Assessment Akar Masalah</h3>
+        <p>Tim melakukan pemetaan mendalam untuk menemukan titik pasti yang selama ini menghambat Anda — bukan sekadar gejala permukaan.</p>
+      </div>
+      <div class="get-card reveal">
+        <span class="get-icon">📋</span>
+        <h3>Workbook & Program Personal</h3>
+        <p>Disusun khusus dalam 1×24 jam setelah assessment. 100% disesuaikan untuk kondisi unik Anda. Tidak ada template.</p>
+      </div>
+      <div class="get-card reveal">
+        <span class="get-icon">👤</span>
+        <h3>Sesi 1-on-1 dengan Founder</h3>
+        <p>1× per minggu, 1 jam penuh bersama el Reyzandra. Tanya jawab, interview, dan penanganan langsung.</p>
+      </div>
+      <div class="get-card reveal">
+        <span class="get-icon">📞</span>
+        <h3>Akses Call 24 Jam</h3>
+        <p>Jika situasi mendesak, Anda bisa langsung menghubungi Founder kapan saja. Tanpa antrian, tanpa admin.</p>
+      </div>
+      <div class="get-card reveal">
+        <span class="get-icon">⚡</span>
+        <h3>Super Relax di Minggu Pertama</h3>
+        <p>Perubahan bukan di bulan ke-3 tapi di minggu pertama. Sistem Anda di-reset ke kapasitas yang jauh melampaui tekanan yang ada.</p>
+      </div>
+      <div class="get-card reveal">
+        <span class="get-icon">🛡️</span>
+        <h3>Garansi Full Refund</h3>
+        <p>Jika tidak ada manfaat selama proses berjalan — uang Anda kembali 100%. Tanpa drama. Tanpa syarat tersembunyi.</p>
+      </div>
+    </div>
+
+    <!-- GUARANTEE BOX -->
+    <div class="guarantee-box reveal">
+      <span class="guarantee-shield">🛡️</span>
+      <h3>Garansi 100% Full Refund</h3>
+      <p>Kami sangat yakin dengan proses ini. <strong style="color:var(--gold2)">Jika Anda tidak merasakan manfaat selama program berlangsung, kami kembalikan investasi Anda sepenuhnya.</strong> Tidak ada risiko untuk Anda. Yang ada hanya peluang untuk berubah.</p>
+    </div>
+
+    <!-- SCARCITY -->
+    <div class="scarcity-block reveal">
+      <div class="scarcity-warn">⚠ Kuota Terbatas</div>
+      <h3>Ini hanya untuk Anda yang <em style="font-style:italic;color:var(--gold2)">sudah punya tekad kuat.</em></h3>
+      <p>Waktu el Reyzandra terbatas. Kami menyeleksi hanya orang-orang yang benar-benar komit dan menginginkan sesuatu yang <strong style="color:var(--white)">pasti</strong>. Program ini bukan untuk semua orang — tapi jika ini memang untuk Anda, Anda tahu.</p>
+      <a href="https://wa.me/62895325633487?text=Hai%20kak%20Renata%2C%20saya%20mau%20book%20untuk%20sesi%206%20bulan" target="_blank" class="wa-btn">
+        <svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.445h.006c6.585 0 11.946-5.336 11.949-11.896.002-3.177-1.24-6.165-3.48-8.448zM12.045 21.785h-.005c-1.774 0-3.514-.474-5.03-1.37l-.361-.214-3.741.976.997-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.893-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.882zm5.413-7.402c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        Book Sesi 6 Bulan via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider z1"></div>
+
 <!-- QUOTES -->
 <section class="section z1">
   <div class="container">
@@ -443,13 +626,13 @@ footer span{color:var(--gold)}
 <section class="cta-block z1" id="daftar">
   <div class="cta-inner reveal">
     <div class="gold-line" style="margin-bottom:32px"></div>
-    <h2>Mulai sekarang.<br><em>Hasil terasa segera.</em></h2>
-    <p>Bukan janji. Bukan motivasi. Tapi perubahan yang Anda rasakan sendiri, dimulai dari sesi pertama.</p>
-    <a href="https://wa.me/62XXXXXXXXXX?text=Halo%2C%20saya%20ingin%20mendaftar%20Sesi%20eL%20Vision" target="_blank" class="wa-btn">
+    <h2>Waktu Anda <em>berharga.</em><br>Jangan habiskan lagi<br>di titik yang sama.</h2>
+    <p>Jika Anda sudah membaca sampai sini, Anda tahu ini bukan kebetulan. Satu keputusan hari ini bisa mengubah arah seluruh hidup Anda.</p>
+    <a href="https://wa.me/62895325633487?text=Hai%20kak%20Renata%2C%20saya%20mau%20book%20untuk%20sesi%206%20bulan" target="_blank" class="wa-btn">
       <svg style="width:22px;height:22px;flex-shrink:0" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.445h.006c6.585 0 11.946-5.336 11.949-11.896.002-3.177-1.24-6.165-3.48-8.448zM12.045 21.785h-.005c-1.774 0-3.514-.474-5.03-1.37l-.361-.214-3.741.976.997-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.893-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.882zm5.413-7.402c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-      Daftar via WhatsApp
+      Book Sesi 6 Bulan via WhatsApp
     </a>
-    <p style="margin-top:20px;font-size:0.78rem;color:var(--text3)">Ganti 62XXXXXXXXXX dengan nomor WhatsApp Anda</p>
+    <p style="margin-top:20px;font-size:0.78rem;color:var(--text3)">Kuota terbatas · Hanya untuk yang benar-benar komit</p>
     <div class="gold-line" style="margin-top:32px"></div>
   </div>
 </section>
