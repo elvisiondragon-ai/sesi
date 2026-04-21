@@ -240,6 +240,19 @@ footer span{color:var(--gold)}
 .scarcity-block .scarcity-warn{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,180,60,0.9);border:1px solid rgba(255,180,60,0.3);padding:5px 16px;border-radius:100px;background:rgba(255,180,60,0.06);margin-bottom:18px}
 .scarcity-block h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:12px;color:var(--white)}
 .scarcity-block p{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:24px}
+
+/* ─── COCOK UNTUK SIAPA ─── */
+.target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:52px}
+.target-card{background:rgba(255,255,255,0.03);border:1px solid rgba(200,169,90,0.15);border-radius:20px;padding:32px 28px;transition:transform 0.3s,border-color 0.3s;position:relative;overflow:hidden}
+.target-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.3s}
+.target-card:hover{transform:translateY(-5px);border-color:rgba(200,169,90,0.45)}
+.target-card:hover::before{opacity:1}
+.target-card .target-emoji{font-size:2.4rem;margin-bottom:16px;display:block}
+.target-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:10px;color:var(--gold2)}
+.target-card p{font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.75}
+.target-card .target-examples{margin-top:14px;padding-top:14px;border-top:1px solid rgba(200,169,90,0.1);display:flex;flex-direction:column;gap:8px}
+.target-card .target-ex{display:flex;align-items:flex-start;gap:10px;font-size:0.82rem;color:rgba(255,255,255,0.55)}
+.target-card .target-ex span{color:var(--gold);flex-shrink:0}
 </style>
 </head>
 <body>
@@ -255,17 +268,17 @@ footer span{color:var(--gold)}
     <div class="orbit"><div class="orbit-dot"></div></div>
     <div class="orbit"></div><div class="orbit"></div>
   </div>
-  <p class="hero-since">Berjalan Sejak 2018 · Via WhatsApp Group</p>
+  <p class="hero-since">Premium VIP 1:1 · Langsung dengan Founder</p>
   <h1 class="hero-title reveal">Sesi<br><em>eL Vision</em></h1>
-  <p class="hero-sub reveal">Meditasi transformatif yang membimbing sistem bawah sadar Anda menuju hasil nyata — finansial, kesehatan, relasi.</p>
+  <p class="hero-sub reveal">Penanganan personal 1-on-1 langsung dengan el Reyzandra. Bukan seminar. Bukan grup. Ini adalah ruang privat Anda untuk menyelesaikan akar masalah — tepat sasaran.</p>
   <div class="hero-price-wrap reveal">
-    <span class="hero-price-old">Rp 4.000.000 / bulan</span>
-    <div class="hero-price">Rp 1.500.000</div>
-    <span class="hero-price-note">per bulan · 8 sesi</span>
+    <span class="hero-price-old">Rp 45.000.000 / 6 bulan</span>
+    <div class="hero-price">Rp 30.000.000</div>
+    <span class="hero-price-note">untuk 6 bulan · personal 1:1 dengan founder</span>
   </div>
   <div class="hero-btns reveal">
-    <a href="#daftar" class="btn-primary">Mulai Transformasi</a>
-    <a href="#program" class="btn-ghost">Lihat Program</a>
+    <a href="#daftar" class="btn-primary">Book Sesi 6 Bulan</a>
+    <a href="#cocok" class="btn-ghost">Cocok untuk Siapa?</a>
   </div>
 </section>
 
@@ -410,22 +423,72 @@ footer span{color:var(--gold)}
         </div>
       </div>
       <div class="prog-card vvip reveal">
+        <div class="prog-badge">Premium VIP</div>
         <div class="prog-inner">
-          <p class="prog-tag">Eksklusif · 1 on 1</p>
-          <h3 class="prog-title">VVIP<br>Private Coaching</h3>
-          <p class="prog-price-old">&nbsp;</p>
-          <div class="prog-price">Rp 15.000.000</div>
-          <p class="prog-per">per bulan</p>
+          <p class="prog-tag">Eksklusif · Personal 1:1 dengan Founder</p>
+          <h3 class="prog-title">Premium VIP<br>Private Coaching</h3>
+          <p class="prog-price-old">Rp 45.000.000</p>
+          <div class="prog-price">Rp 30.000.000</div>
+          <p class="prog-per">untuk 6 bulan</p>
           <div class="prog-divider"></div>
           <div class="prog-features">
-            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Sesi 1-on-1 intensif personal</span></div>
-            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Analisis mendalam akar masalah Anda</span></div>
-            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Akses langsung eL Vision kapanpun</span></div>
-            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Program disesuaikan 100% untuk Anda</span></div>
-            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Percepatan transformasi maksimal</span></div>
-            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Untuk kasus yang butuh penanganan dalam</span></div>
+            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Assessment akar masalah di hari pertama</span></div>
+            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Workbook & program personal dalam 1×24 jam</span></div>
+            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Sesi 1-on-1 dengan Founder (1×/minggu, 1 jam)</span></div>
+            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Akses call 24 jam langsung ke el Reyzandra</span></div>
+            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Cocok untuk relasi, bisnis, dan karier</span></div>
+            <div class="prog-feat"><span class="prog-feat-icon">✦</span><span>Garansi full refund jika tidak ada manfaat</span></div>
           </div>
-          <a href="#daftar" class="prog-cta">Daftar VVIP</a>
+          <a href="https://wa.me/62895325633487?text=Hai%20kak%20Renata%2C%20saya%20mau%20book%20untuk%20sesi%206%20bulan" target="_blank" class="prog-cta">Book Sesi 6 Bulan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider z1"></div>
+
+<!-- ═══ COCOK UNTUK SIAPA ═══ -->
+<section class="section z1" id="cocok">
+  <div class="container">
+    <div class="sec-center reveal">
+      <div class="tag" style="margin-bottom:18px">Tepat Sasaran</div>
+      <h2 class="sec-h">Cocok untuk Anda yang ingin<br><em style="font-style:italic;color:var(--gold2)">hasil pasti, bukan coba-coba.</em></h2>
+      <p style="color:var(--text3);margin-top:14px;font-size:0.92rem;max-width:580px;margin-left:auto;margin-right:auto">Program Premium VIP 1:1 ini dirancang untuk Anda yang sudah lelah dengan solusi setengah-setengah. Anda tahu masalahnya nyata — dan Anda butuh penanganan yang <strong style="color:var(--white)">tepat sasaran</strong>.</p>
+      <div class="gold-line" style="margin-top:18px"></div>
+    </div>
+    <div class="target-grid">
+      <div class="target-card reveal">
+        <span class="target-emoji">💔</span>
+        <h3>Personal Relationship</h3>
+        <p>Untuk Anda yang mengalami pola relasi berulang, konflik yang tidak kunjung selesai, atau hubungan yang terasa buntu meski sudah berusaha.</p>
+        <div class="target-examples">
+          <div class="target-ex"><span>✦</span> Pasangan yang terus bertengkar tentang hal yang sama</div>
+          <div class="target-ex"><span>✦</span> Sulit membangun kepercayaan atau keintiman</div>
+          <div class="target-ex"><span>✦</span> Trauma masa lalu yang membayangi hubungan sekarang</div>
+          <div class="target-ex"><span>✦</span> Merasa tidak layak dicintai atau selalu ditinggalkan</div>
+        </div>
+      </div>
+      <div class="target-card reveal">
+        <span class="target-emoji">📈</span>
+        <h3>Bisnis & Finansial</h3>
+        <p>Untuk Anda yang bisnis atau pendapatannya stagnan, terus mengalami hambatan tak kasat mata, atau naik level tapi selalu ada yang berantakan.</p>
+        <div class="target-examples">
+          <div class="target-ex"><span>✦</span> Revenue yang mentok meski strategi sudah benar</div>
+          <div class="target-ex"><span>✦</span> Takut scaling karena setiap naik pasti ada masalah baru</div>
+          <div class="target-ex"><span>✦</span> Decision fatigue — bingung terus di persimpangan</div>
+          <div class="target-ex"><span>✦</span> Pola self-sabotage dalam keputusan finansial</div>
+        </div>
+      </div>
+      <div class="target-card reveal">
+        <span class="target-emoji">🎯</span>
+        <h3>Karier & Posisi</h3>
+        <p>Untuk Anda yang merasa stuck di posisi yang sama, tidak dipromosikan meski sudah perform, atau ingin pivot karier tapi tidak punya kejelasan.</p>
+        <div class="target-examples">
+          <div class="target-ex"><span>✦</span> Terjebak di posisi yang sama bertahun-tahun</div>
+          <div class="target-ex"><span>✦</span> Politik kantor yang menguras energi dan mental</div>
+          <div class="target-ex"><span>✦</span> Ingin membangun sesuatu sendiri tapi belum berani</div>
+          <div class="target-ex"><span>✦</span> Impostor syndrome — merasa tidak cukup kompeten</div>
         </div>
       </div>
     </div>
