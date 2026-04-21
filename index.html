@@ -257,6 +257,23 @@ footer span{color:var(--gold)}
 /* ─── CALENDLY EMBED ─── */
 .calendly-wrap{max-width:780px;margin:52px auto 0;border-radius:20px;overflow:hidden;border:1px solid rgba(200,169,90,0.2);background:rgba(255,255,255,0.02)}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1290886492233491');
+fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1290886492233491&ev=ViewContent&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -968,6 +985,42 @@ const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
 },{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* PIXEL & CAPI TRACKING */
+document.querySelectorAll('a[href^="https://wa.me"]').forEach(link => {
+  link.addEventListener('click', function() {
+    if(typeof fbq === 'function') {
+      fbq('track', 'Lead');
+      fbq('track', 'Schedule');
+    }
+    
+    // Send CAPI Lead
+    fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/capi-universal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        pixelId: '1290886492233491',
+        eventName: 'Lead',
+        eventSourceUrl: window.location.href,
+        secretName: 'CAPI30JUTA',
+        userData: { client_user_agent: navigator.userAgent }
+      })
+    }).catch(err => console.error('CAPI Error:', err));
+    
+    // Send CAPI Schedule
+    fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/capi-universal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        pixelId: '1290886492233491',
+        eventName: 'Schedule',
+        eventSourceUrl: window.location.href,
+        secretName: 'CAPI30JUTA',
+        userData: { client_user_agent: navigator.userAgent }
+      })
+    }).catch(err => console.error('CAPI Error:', err));
+  });
+});
 </script>
 </body>
 </html>
