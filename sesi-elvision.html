@@ -1009,7 +1009,10 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 /* PIXEL & CAPI TRACKING */
 document.querySelectorAll('a[href^="https://wa.me"]').forEach(link => {
   link.addEventListener('click', function() {
-    if(typeof fbq === 'function') {
+    if(typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead');
+      window.fbq('track', 'Schedule');
+    } else if (typeof fbq === 'function') {
       fbq('track', 'Lead');
       fbq('track', 'Schedule');
     }
