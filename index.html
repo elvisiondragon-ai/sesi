@@ -1008,12 +1008,15 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.body.addEventListener('click', function(e) {
   const link = e.target.closest('a[href^="https://wa.me"]');
   if (link) {
+    const eventIdLead = 'lead_' + new Date().getTime() + '_' + Math.floor(Math.random() * 1000);
+    const eventIdSchedule = 'sched_' + new Date().getTime() + '_' + Math.floor(Math.random() * 1000);
+
     if(typeof window.fbq === 'function') {
-      window.fbq('track', 'Lead');
-      window.fbq('track', 'Schedule');
+      window.fbq('track', 'Lead', {}, { eventID: eventIdLead });
+      window.fbq('track', 'Schedule', {}, { eventID: eventIdSchedule });
     } else if (typeof fbq === 'function') {
-      fbq('track', 'Lead');
-      fbq('track', 'Schedule');
+      fbq('track', 'Lead', {}, { eventID: eventIdLead });
+      fbq('track', 'Schedule', {}, { eventID: eventIdSchedule });
     }
     
     // Send CAPI Lead
@@ -1023,6 +1026,7 @@ document.body.addEventListener('click', function(e) {
       body: JSON.stringify({
         pixelId: '1290886492233491',
         eventName: 'Lead',
+        eventId: eventIdLead,
         eventSourceUrl: window.location.href,
         secretName: 'CAPI30JUTA',
         testEventCode: 'TEST67449',
@@ -1037,6 +1041,7 @@ document.body.addEventListener('click', function(e) {
       body: JSON.stringify({
         pixelId: '1290886492233491',
         eventName: 'Schedule',
+        eventId: eventIdSchedule,
         eventSourceUrl: window.location.href,
         secretName: 'CAPI30JUTA',
         testEventCode: 'TEST67449',
