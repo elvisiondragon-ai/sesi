@@ -1088,5 +1088,181 @@ document.body.addEventListener('click', function(e) {
   </svg>
 </a>
 
+
+<!-- === SECURE PAYMENT PORTAL === -->
+<div id="payment-page" style="display:none;">
+    <div style="max-width: 500px; margin: 40px auto; background: rgba(255,255,255,0.03); border: 1px solid rgba(200,169,90,0.3); border-radius: 20px; padding: 40px 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+       <h2 style="font-family: var(--font-1); color: var(--gold); text-align:center; font-size: 32px; margin-bottom:10px; font-weight:700;">Secure Checkout</h2>
+       <p style="text-align:center; color:rgba(255,255,255,0.7); font-size:14px; margin-bottom:30px;">eL Vision Premium VIP 1:1</p>
+       
+       <div id="checkout-form">
+           <input type="text" id="pay-name" placeholder="Full Name" style="width:100%; padding:16px; border-radius:12px; background:rgba(255,255,255,0.05); color:white; border:1px solid rgba(255,255,255,0.1); margin-bottom:15px; font-size:15px; outline:none;" required>
+           <input type="email" id="pay-email" placeholder="Email Address" style="width:100%; padding:16px; border-radius:12px; background:rgba(255,255,255,0.05); color:white; border:1px solid rgba(255,255,255,0.1); margin-bottom:25px; font-size:15px; outline:none;" required>
+           
+           <h3 style="color:#fff; margin-bottom:15px; font-size:16px;">Select Payment Method</h3>
+           <label style="display:flex; align-items:center; gap:12px; padding:18px; border:2px solid var(--gold); background:rgba(200,169,90,0.05); border-radius:12px; margin-bottom:12px; cursor:pointer; transition:all 0.2s;">
+              <input type="radio" name="paymethod" value="BCA_MANUAL" checked style="accent-color:var(--gold); transform:scale(1.2);"> 
+              <div style="flex:1;">
+                 <div style="color:white; font-weight:600; font-size:15px;">Transfer Manual BCA</div>
+                 <div style="color:rgba(255,255,255,0.5); font-size:13px; margin-top:4px;">Rp 30.000.000 (Otomatis)</div>
+              </div>
+           </label>
+           
+           <label style="display:flex; align-items:center; gap:12px; padding:18px; border:2px solid rgba(255,255,255,0.1); border-radius:12px; margin-bottom:30px; cursor:pointer; transition:all 0.2s;">
+              <input type="radio" name="paymethod" value="PAYPAL" style="accent-color:var(--gold); transform:scale(1.2);"> 
+              <div style="flex:1;">
+                 <div style="color:white; font-weight:600; font-size:15px;">PayPal / Credit Card</div>
+                 <div style="color:rgba(255,255,255,0.5); font-size:13px; margin-top:4px;">$1,900 USD</div>
+              </div>
+           </label>
+           
+           <button id="btn-process-pay" style="width:100%; padding:18px; border-radius:30px; background:linear-gradient(135deg, #C8A95A, #E2CA85, #C8A95A); color:#000; font-weight:700; border:none; cursor:pointer; font-size:16px; box-shadow:0 8px 20px rgba(200,169,90,0.3); transition:transform 0.2s;">Process Secure Payment</button>
+       </div>
+       
+       <div id="bca-instructions" style="display:none; text-align:center;">
+           <div style="width:60px; height:60px; background:rgba(200,169,90,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+           </div>
+           <h3 style="color:#fff; margin-bottom:20px; font-size:22px; font-family:var(--font-1);">Instruksi Transfer BCA</h3>
+           
+           <div style="background:rgba(255,255,255,0.03); padding:25px; border-radius:15px; border:1px solid rgba(200,169,90,0.2); margin-bottom:25px;">
+              <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;">Nomor Rekening</p>
+              <h2 style="font-family:monospace; color:var(--gold); font-size:32px; margin-bottom:8px; font-weight:bold; letter-spacing:2px;">7751146578</h2>
+              <p style="color:#fff; font-weight:600; font-size:16px;">A.n Delia Mutia</p>
+              <div style="margin:20px 0; border-bottom:1px solid rgba(255,255,255,0.1);"></div>
+              <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;">Total Transfer (Wajib Sesuai)</p>
+              <h2 id="bca-amount-display" style="color:#fff; font-size:28px; font-weight:bold;">Rp 30.000.xxx</h2>
+           </div>
+           
+           <p style="color:rgba(255,255,255,0.6); font-size:13px; margin-bottom:20px; font-style:italic;">*Sistem kami memvalidasi transfer secara otomatis. Harap transfer sesuai nominal unik di atas.</p>
+           
+           <button id="btn-confirm-wa" style="width:100%; padding:18px; border-radius:30px; background:#25D366; color:#fff; font-weight:700; border:none; cursor:pointer; font-size:16px; box-shadow:0 8px 20px rgba(37,211,102,0.3); transition:transform 0.2s;">Konfirmasi via WhatsApp</button>
+       </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('pay')) {
+    // Hide main landing page
+    document.querySelectorAll('nav, header, section, .float-wa').forEach(el => {
+      if(el) el.style.display = 'none';
+    });
+    document.body.style.background = '#0A0B10';
+    document.getElementById('payment-page').style.display = 'block';
+
+    // 1. CAPI AddPaymentInfo Tracking
+    const eventIdAPI = 'api_' + new Date().getTime() + '_' + Math.floor(Math.random()*1000);
+    if(typeof fbq === 'function') fbq('track', 'AddPaymentInfo', {value: 30000000, currency: 'IDR'}, {eventID: eventIdAPI});
+    
+    fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/capi-universal', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          pixelId: '1275074677473419',
+          eventName: 'AddPaymentInfo',
+          eventId: eventIdAPI,
+          eventSourceUrl: window.location.href,
+          secretName: 'VIP_30JT',
+          customData: { value: 30000000, currency: 'IDR' },
+          userData: { client_user_agent: navigator.userAgent }
+        })
+    }).catch(e => console.error(e));
+
+    // Handle Radio UI Toggle
+    const radios = document.querySelectorAll('input[name="paymethod"]');
+    radios.forEach(r => {
+      r.addEventListener('change', (e) => {
+        radios.forEach(rad => {
+           rad.parentElement.style.borderColor = 'rgba(255,255,255,0.1)';
+           rad.parentElement.style.background = 'transparent';
+        });
+        e.target.parentElement.style.borderColor = 'var(--gold)';
+        e.target.parentElement.style.background = 'rgba(200,169,90,0.05)';
+      });
+    });
+
+    // Handle Checkout Submission
+    document.getElementById('btn-process-pay').addEventListener('click', async () => {
+      const name = document.getElementById('pay-name').value;
+      const email = document.getElementById('pay-email').value;
+      const method = document.querySelector('input[name="paymethod"]:checked').value;
+
+      if(!name || !email) return alert('Please enter your Name and Email address.');
+
+      const btn = document.getElementById('btn-process-pay');
+      btn.innerText = 'Processing Securely...';
+      btn.style.opacity = '0.7';
+      btn.disabled = true;
+
+      if (method === 'BCA_MANUAL') {
+          const rnd = Math.floor(Math.random() * 900) + 100;
+          const total = 30000000 + rnd;
+          document.getElementById('bca-amount-display').innerText = 'Rp ' + total.toLocaleString('id-ID');
+          document.getElementById('checkout-form').style.display = 'none';
+          document.getElementById('bca-instructions').style.display = 'block';
+
+          // Handle Purchase CAPI on WA click
+          document.getElementById('btn-confirm-wa').onclick = () => {
+             const eventIdPur = 'pur_' + new Date().getTime() + '_' + Math.floor(Math.random()*1000);
+             if(typeof fbq === 'function') fbq('track', 'Purchase', {value: total, currency: 'IDR'}, {eventID: eventIdPur});
+             
+             fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/capi-universal', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                   pixelId: '1275074677473419',
+                   eventName: 'Purchase',
+                   eventId: eventIdPur,
+                   eventSourceUrl: window.location.href,
+                   secretName: 'VIP_30JT',
+                   customData: { value: total, currency: 'IDR' },
+                   userData: { em: email, fn: name.split(' ')[0], client_user_agent: navigator.userAgent }
+                })
+             }).catch(e => console.error(e));
+             
+             window.location.href = `https://wa.me/62895325633487?text=Hai%20Renata%2C%20saya%20sudah%20transfer%20Manual%20BCA%20untuk%20VIP%201%3A1%20sebesar%20Rp%20${total.toLocaleString('id-ID')}.%20Nama%3A%20${name}`;
+          };
+      } else {
+          // PayPal Integration via Supabase Edge Function
+          try {
+              const payload = {
+                  subscriptionType: 'vip_30jt',
+                  paymentMethod: 'PAYPAL',
+                  userName: name,
+                  userEmail: email,
+                  phoneNumber: '0000000000',
+                  amount: 1900, // $1900 USD
+                  currency: 'USD',
+                  quantity: 1,
+                  productName: 'eL Vision Premium VIP 1:1',
+                  pageUrl: window.location.href
+              };
+              const response = await fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/tripay-create-payment', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(payload)
+              });
+              const data = await response.json();
+              if (data?.success && data?.checkoutUrl) {
+                  window.location.href = data.checkoutUrl;
+              } else {
+                  alert('Gateway Error: ' + (data?.error || 'Unknown network error'));
+                  btn.innerText = 'Process Secure Payment';
+                  btn.style.opacity = '1';
+                  btn.disabled = false;
+              }
+          } catch (e) {
+              alert('System Error: ' + e.message);
+              btn.innerText = 'Process Secure Payment';
+              btn.style.opacity = '1';
+              btn.disabled = false;
+          }
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
