@@ -1095,6 +1095,101 @@ document.body.addEventListener('click', function(e) {
 </a>
 
 
+<!-- === VIP SURVEY PORTAL === -->
+<style>
+.svy-opt { display:flex; align-items:flex-start; gap:14px; padding: 18px; border: 2px solid rgba(255,255,255,0.05); border-radius: 12px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s; color: white; background: rgba(255,255,255,0.02); font-size: 15px; }
+.svy-opt:hover { border-color: rgba(200,169,90,0.4); }
+.svy-opt.selected { border-color: var(--gold); background: rgba(200,169,90,0.08); }
+.svy-btn { width:100%; padding: 18px; border-radius: 30px; background: linear-gradient(135deg, #C8A95A, #E2CA85, #C8A95A); color:#000; font-weight:700; border:none; cursor:pointer; font-size:16px; margin-top:24px; box-shadow:0 8px 20px rgba(200,169,90,0.3); transition:transform 0.2s;}
+.svy-btn:hover { transform: translateY(-3px); }
+.svy-input { width:100%; padding: 18px; border-radius: 12px; background: rgba(255,255,255,0.05); color:white; border: 1px solid rgba(255,255,255,0.1); outline:none; font-family: var(--sans); font-size: 15px; }
+.svy-input:focus { border-color: var(--gold); }
+.svy-step { display: none; animation: svyFadeIn 0.5s ease; }
+.svy-step.active { display: block; }
+@keyframes svyFadeIn { 0% { opacity: 0; transform: translateY(15px); } 100% { opacity: 1; transform: translateY(0); } }
+</style>
+
+<div id="survey-page" style="display:none; min-height:100vh; padding:60px 20px;">
+    <div style="max-width: 640px; margin: 0 auto; background: rgba(255,255,255,0.02); border: 1px solid rgba(200,169,90,0.2); border-radius: 24px; padding: 40px 32px; box-shadow: 0 24px 60px rgba(0,0,0,0.6); position:relative; overflow:hidden;">
+       
+       <div style="height: 4px; background: rgba(255,255,255,0.05); border-radius: 4px; margin-bottom: 40px;">
+           <div id="svy-prog" style="height: 100%; width: 14.28%; background: var(--gold); border-radius: 4px; transition: width 0.4s ease; box-shadow: 0 0 10px var(--gold);"></div>
+       </div>
+
+       <!-- Step 1 -->
+       <div id="svy-step-1" class="svy-step active">
+          <h2 style="font-family: var(--serif); color: var(--gold); font-size: 28px; margin-bottom: 24px; line-height: 1.3;">1. Jelaskan masalah utama yang sedang Anda hadapi saat ini:</h2>
+          <label class="svy-opt"><input type="radio" name="q1" value="Masalah Finansial" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>A. Masalah Finansial</span></label>
+          <label class="svy-opt"><input type="radio" name="q1" value="Masalah Pasangan/Keluarga" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>B. Masalah Pasangan / Keluarga</span></label>
+          <label class="svy-opt"><input type="radio" name="q1" value="Masalah Karier/Tahta" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>C. Masalah Karier / Tahta</span></label>
+          <label class="svy-opt"><input type="radio" name="q1" value="Lainnya" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>D. Isi Sendiri</span></label>
+          <input type="text" id="q1-other" class="svy-input" placeholder="Tuliskan masalah Anda..." style="display:none; margin-top:16px;">
+          <button class="svy-btn btn-next" data-next="2">Selanjutnya</button>
+       </div>
+
+       <!-- Step 2 -->
+       <div id="svy-step-2" class="svy-step">
+          <h2 style="font-family: var(--serif); color: var(--gold); font-size: 28px; margin-bottom: 24px; line-height: 1.3;">2. Tolong jelaskan masalah Anda secara spesifik dan berapa lama Anda sudah berusaha menyelesaikannya?</h2>
+          <textarea id="q2-text" class="svy-input" rows="5" placeholder="Contoh: Sudah 3 tahun saya merasa buntu secara finansial padahal saya..." required></textarea>
+          <button class="svy-btn btn-next" data-next="3">Selanjutnya</button>
+       </div>
+
+       <!-- Step 3 -->
+       <div id="svy-step-3" class="svy-step">
+          <h2 style="font-family: var(--serif); color: var(--gold); font-size: 26px; margin-bottom: 16px; line-height: 1.4;">3. Apa Anda siap berkomitmen 6 bulan (sekali seminggu) menjalani workbook dan *Task* dari Founder?</h2>
+          <p style="color:rgba(255,255,255,0.5); font-size:14px; margin-bottom:24px; line-height:1.6; padding:12px; background:rgba(255,255,255,0.03); border-radius:8px;">*Task ini didesain untuk memastikan mental Anda super relax dan arah pikiran super jelas. Proses inilah yang akan memicu pencapaian tujuan Anda secara magis.</p>
+          <label class="svy-opt"><input type="radio" name="q3" value="Ya, Siap Komitmen" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>Ya, Saya Siap Berkomitmen Penuh</span></label>
+          <label class="svy-opt"><input type="radio" name="q3" value="Belum Siap" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>Masih Ragu / Belum Siap</span></label>
+          <button class="svy-btn btn-next" data-next="4">Selanjutnya</button>
+       </div>
+
+       <!-- Step 4 -->
+       <div id="svy-step-4" class="svy-step">
+          <h2 style="font-family: var(--serif); color: var(--gold); font-size: 28px; margin-bottom: 24px; line-height: 1.3;">4. Berapa kisaran penghasilan bulanan Anda saat ini?</h2>
+          <label class="svy-opt"><input type="radio" name="q4" value="10 Juta++" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>A. 10 Juta++</span></label>
+          <label class="svy-opt"><input type="radio" name="q4" value="50 Juta++" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>B. 50 Juta++</span></label>
+          <label class="svy-opt"><input type="radio" name="q4" value="100 Juta++" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>C. 100 Juta++</span></label>
+          <label class="svy-opt"><input type="radio" name="q4" value="Dibawah 10 Juta" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>D. Di bawah 10 Juta</span></label>
+          <label class="svy-opt"><input type="radio" name="q4" value="Lainnya" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>E. Isi Sendiri</span></label>
+          <input type="text" id="q4-other" class="svy-input" placeholder="Sebutkan kisaran Anda..." style="display:none; margin-top:16px;">
+          <button class="svy-btn btn-next" data-next="5">Selanjutnya</button>
+       </div>
+
+       <!-- Step 5 -->
+       <div id="svy-step-5" class="svy-step">
+          <h2 style="font-family: var(--serif); color: var(--gold); font-size: 26px; margin-bottom: 24px; line-height: 1.4;">5. Sesi 6 bulan ini bersifat Sangat VIP dengan investasi <span style="color:#fff">Rp 30.000.000 / 6 Bulan</span>. Jika Anda lolos seleksi dan siap setelah Book Call, apakah Anda bersedia untuk berinvestasi?</h2>
+          <label class="svy-opt"><input type="radio" name="q5" value="Bersedia" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>Ya, Saya Bersedia Berinvestasi</span></label>
+          <label class="svy-opt"><input type="radio" name="q5" value="Tidak Bersedia" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>Tidak, Saya Keberatan</span></label>
+          <button class="svy-btn btn-next" data-next="6">Selanjutnya</button>
+       </div>
+
+       <!-- Step 6 -->
+       <div id="svy-step-6" class="svy-step">
+          <h2 style="font-family: var(--serif); color: var(--gold); font-size: 28px; margin-bottom: 24px; line-height: 1.3;">6. Pilih Jadwal Book Call Anda:</h2>
+          <p style="color:rgba(255,255,255,0.6); font-size:14px; margin-bottom:20px;">Silakan pilih prioritas waktu kalender untuk ketersediaan 3 hari ke depan.</p>
+          <div id="date-opts-container"></div>
+          <button class="svy-btn btn-next" data-next="7">Selanjutnya</button>
+       </div>
+
+       <!-- Step 7 -->
+       <div id="svy-step-7" class="svy-step">
+          <h2 style="font-family: var(--serif); color: var(--gold); font-size: 28px; margin-bottom: 12px; line-height: 1.3;">7. Lengkapi Profil Anda</h2>
+          <p style="color:rgba(255,255,255,0.5); font-size:14px; margin-bottom:28px;">Digunakan semata-mata untuk dihubungi oleh Asisten Eksklusif eL Vision.</p>
+          
+          <div style="margin-bottom:20px;">
+             <label style="display:block; color:rgba(255,255,255,0.8); font-size:14px; margin-bottom:10px; font-weight:500; letter-spacing:0.05em; text-transform:uppercase;">Nama Lengkap / Panggilan</label>
+             <input type="text" id="q7-name" class="svy-input" placeholder="Masukkan nama..." required>
+          </div>
+          <div style="margin-bottom:32px;">
+             <label style="display:block; color:rgba(255,255,255,0.8); font-size:14px; margin-bottom:10px; font-weight:500; letter-spacing:0.05em; text-transform:uppercase;">Nomor WhatsApp Aktif</label>
+             <input type="tel" id="q7-wa" class="svy-input" placeholder="Awali dengan 628..." required>
+          </div>
+          <button id="btn-submit-svy" class="svy-btn" style="background:var(--gold); color:#000;">Pesan Jadwal & Kirim ke WhatsApp</button>
+       </div>
+       
+    </div>
+</div>
+
 <!-- === SECURE PAYMENT PORTAL === -->
 <div id="payment-page" style="display:none;">
     <div style="max-width: 500px; margin: 40px auto; background: rgba(255,255,255,0.03); border: 1px solid rgba(200,169,90,0.3); border-radius: 20px; padding: 40px 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
@@ -1309,6 +1404,147 @@ document.addEventListener('DOMContentLoaded', () => {
            });
        }
    }
+});
+</script>
+<script>
+// --- SURVEY INTERACTIVE & CAPI LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+  const qs = new URLSearchParams(window.location.search);
+  if (qs.has('survey')) {
+    // Hide standard elements
+    document.querySelectorAll('nav, header, section, .float-wa').forEach(el => {
+      if(el) el.style.display = 'none';
+    });
+    document.body.style.background = '#0A0B10';
+    const svyPage = document.getElementById('survey-page');
+    if(svyPage) svyPage.style.display = 'block';
+
+    // CAPI Native View for Survey
+    const eventIdAPI = 'srv_' + new Date().getTime();
+    if(typeof fbq === 'function') fbq('trackCustom', 'SurveyView', {}, {eventID: eventIdAPI});
+
+    // Populate Dates
+    const dtContainer = document.getElementById('date-opts-container');
+    const dayNames = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+    const monthNames = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+    if (dtContainer) {
+        for (let i = 1; i <= 3; i++) {
+            const date = new Date();
+            date.setDate(date.getDate() + i);
+            const strDate = `${dayNames[date.getDay()]}, ${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+            dtContainer.innerHTML += `<label class="svy-opt"><input type="radio" name="q6" value="${strDate}" style="accent-color:var(--gold); transform:scale(1.2); margin-top:3px;"> <span>${strDate}</span></label>`;
+        }
+    }
+
+    // Checkboxes Active Style & "Other" toggles
+    document.querySelectorAll('.svy-opt input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            const name = e.target.name;
+            document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+                r.parentElement.classList.remove('selected');
+            });
+            e.target.parentElement.classList.add('selected');
+            
+            if(name === 'q1') {
+                document.getElementById('q1-other').style.display = e.target.value === 'Lainnya' ? 'block' : 'none';
+                if(e.target.value === 'Lainnya') document.getElementById('q1-other').focus();
+            }
+            if(name === 'q4') {
+                document.getElementById('q4-other').style.display = e.target.value === 'Lainnya' ? 'block' : 'none';
+                if(e.target.value === 'Lainnya') document.getElementById('q4-other').focus();
+            }
+        });
+    });
+
+    let svyAnswers = {};
+    document.querySelectorAll('.btn-next').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const targetStep = parseInt(e.target.getAttribute('data-next'));
+            const currentStep = targetStep - 1;
+
+            if(currentStep === 1) {
+                const c = document.querySelector('input[name="q1"]:checked');
+                if(!c) return alert('Pilih salah satu Poin Utama lalu klik Selanjutnya.');
+                svyAnswers.q1 = c.value === 'Lainnya' ? document.getElementById('q1-other').value : c.value;
+                if(!svyAnswers.q1) return alert('Sebutkan masalah Anda.');
+            } else if(currentStep === 2) {
+                svyAnswers.q2 = document.getElementById('q2-text').value;
+                if(svyAnswers.q2.length < 5) return alert('Tolong lengkapi cerita spesifik masalah Anda.');
+            } else if(currentStep === 3) {
+                const c = document.querySelector('input[name="q3"]:checked');
+                if(!c) return alert('Pilih persetujuan komitmen.');
+                svyAnswers.q3 = c.value;
+            } else if(currentStep === 4) {
+                const c = document.querySelector('input[name="q4"]:checked');
+                if(!c) return alert('Pilih kisaran penghasilan bulanan Anda.');
+                svyAnswers.q4 = c.value === 'Lainnya' ? document.getElementById('q4-other').value : c.value;
+                if(!svyAnswers.q4) return alert('Masukkan angka kisaran penghasilan Anda.');
+            } else if(currentStep === 5) {
+                const c = document.querySelector('input[name="q5"]:checked');
+                if(!c) return alert('Konfirmasi persetujuan investasi untuk melanjutkan.');
+                svyAnswers.q5 = c.value;
+            } else if(currentStep === 6) {
+                const c = document.querySelector('input[name="q6"]:checked');
+                if(!c) return alert('Pilih minimal satu hari.');
+                svyAnswers.q6 = c.value;
+            }
+
+            document.querySelectorAll('.svy-step').forEach(el => el.classList.remove('active'));
+            document.getElementById('svy-step-' + targetStep).classList.add('active');
+            let pct = (targetStep / 7) * 100;
+            document.getElementById('svy-prog').style.width = pct + '%';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
+    const submitBtn = document.getElementById('btn-submit-svy');
+    if(submitBtn) {
+       submitBtn.addEventListener('click', () => {
+           const n = document.getElementById('q7-name').value;
+           const w = document.getElementById('q7-wa').value;
+           if(n.length < 2 || w.length < 8) return alert('Data nama atau nomor WhatsApp tidak valid.');
+           svyAnswers.name = n;
+           svyAnswers.wa = w;
+
+           submitBtn.innerText = 'Mengamankan Jadwal Booking...';
+           submitBtn.style.opacity = '0.7';
+
+           // Fire CAPI Standard Events natively
+           const eventIdLead = 'ld_' + new Date().getTime() + '_' + Math.floor(Math.random()*1000);
+           if(typeof fbq === 'function') fbq('track', 'Lead', {}, {eventID: eventIdLead});
+           if(typeof fbq === 'function') fbq('track', 'Schedule', {}, {eventID: eventIdLead});
+
+           fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/capi-universal', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify({
+                  pixelId: '1275074677473419',
+                  eventName: 'Lead',
+                  eventId: eventIdLead,
+                  eventSourceUrl: window.location.href,
+                  secretName: 'VIP_30JT',
+                  userData: { ph: w, em: w+'@lead.survey', fn: n.split(' ')[0], client_user_agent: navigator.userAgent }
+               })
+           }).catch(e=>console.error(e));
+
+           const waText = `Halo Kak Renata! Saya baru saja mengisi Form Survey Book Call VIP 1:1 eL Vision.\n\n` +
+           `*1. Masalah:* ${svyAnswers.q1}\n` +
+           `*2. Detail:* ${svyAnswers.q2}\n` +
+           `*3. Komitmen:* ${svyAnswers.q3}\n` +
+           `*4. Penghasilan:* ${svyAnswers.q4}\n` +
+           `*5. Persetujuan Investasi VIP Rp 30Jt:* ${svyAnswers.q5}\n` +
+           `*6. Jadwal Dipilih:* ${svyAnswers.q6}\n\n` +
+           `*Identitas*\n` +
+           `Nama: ${svyAnswers.name}\n` +
+           `WA: ${svyAnswers.wa}\n\n` +
+           `Mohon info tahapan book call selanjutnya.`;
+
+           setTimeout(() => {
+              window.location.href = `https://wa.me/62895325633487?text=${encodeURIComponent(waText)}`;
+           }, 800);
+       });
+    }
+  }
 });
 </script>
 </body>
