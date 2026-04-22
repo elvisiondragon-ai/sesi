@@ -1246,6 +1246,256 @@ document.body.addEventListener('click', function(e) {
     </div>
 </div>
 
+<!-- === PAYMENT PORTAL 1 JUTA — SINGLE CALL SESSION === -->
+<div id="payment-1jt-page" style="display:none;">
+    <div style="max-width: 540px; margin: 40px auto; background: rgba(255,255,255,0.03); border: 1px solid rgba(200,169,90,0.3); border-radius: 20px; padding: 40px 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+       <h2 style="font-family: var(--serif); color: var(--gold); text-align:center; font-size: 32px; margin-bottom:6px; font-weight:600;">Sesi 1:1 · 60 Menit</h2>
+       <p style="text-align:center; color:rgba(255,255,255,0.7); font-size:14px; margin-bottom:28px;">Full Assessment & Meditasi Clearing</p>
+
+       <!-- WHAT YOU GET -->
+       <div id="pay1jt-benefits" style="background:rgba(200,169,90,0.05); border:1px solid rgba(200,169,90,0.2); border-radius:14px; padding:22px 22px 18px; margin-bottom:26px;">
+          <p style="color:var(--gold); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:14px; font-weight:500;">Apa yang Anda Dapatkan</p>
+          <div style="display:flex; gap:12px; margin-bottom:14px; align-items:flex-start;">
+             <span style="color:var(--gold); font-size:18px; line-height:1.4;">✦</span>
+             <div>
+                <div style="color:#fff; font-weight:600; font-size:15px; margin-bottom:3px;">1× Call 60 Menit Privat</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Full assessment akar masalah Anda — finansial, relasi, karier, atau mental block.</div>
+             </div>
+          </div>
+          <div style="display:flex; gap:12px; margin-bottom:14px; align-items:flex-start;">
+             <span style="color:var(--gold); font-size:18px; line-height:1.4;">✦</span>
+             <div>
+                <div style="color:#fff; font-weight:600; font-size:15px; margin-bottom:3px;">Meditasi Clearing Terpandu</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Meditasi langsung dipandu untuk menclearkan beban mental & blokade bawah sadar.</div>
+             </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+             <span style="color:var(--gold); font-size:18px; line-height:1.4;">✦</span>
+             <div>
+                <div style="color:#fff; font-weight:600; font-size:15px; margin-bottom:3px;">Garansi Uang Kembali 100%</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Jika setelah sesi Anda merasa tidak ada manfaat sama sekali, uang Anda kami kembalikan penuh.</div>
+             </div>
+          </div>
+       </div>
+
+       <div id="pay1jt-form">
+           <input type="text" id="pay1jt-name" placeholder="Nama Lengkap" style="width:100%; padding:16px; border-radius:12px; background:rgba(255,255,255,0.05); color:white; border:1px solid rgba(255,255,255,0.1); margin-bottom:12px; font-size:15px; outline:none;" required>
+           <input type="email" id="pay1jt-email" placeholder="Email Aktif" style="width:100%; padding:16px; border-radius:12px; background:rgba(255,255,255,0.05); color:white; border:1px solid rgba(255,255,255,0.1); margin-bottom:12px; font-size:15px; outline:none;" required>
+           <input type="tel" id="pay1jt-phone" placeholder="No. WhatsApp (awali 628...)" style="width:100%; padding:16px; border-radius:12px; background:rgba(255,255,255,0.05); color:white; border:1px solid rgba(255,255,255,0.1); margin-bottom:22px; font-size:15px; outline:none;" required>
+
+           <h3 style="color:#fff; margin-bottom:14px; font-size:16px;">Metode Pembayaran</h3>
+           <div id="pay1jt-methods" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:22px;"></div>
+
+           <button id="btn-process-pay1jt" style="width:100%; padding:18px; border-radius:30px; background:linear-gradient(135deg, #C8A95A, #E2CA85, #C8A95A); color:#000; font-weight:700; border:none; cursor:pointer; font-size:16px; box-shadow:0 8px 20px rgba(200,169,90,0.3); transition:transform 0.2s;">Proses Pembayaran Rp 1.000.000</button>
+       </div>
+
+       <!-- BCA Manual Instructions -->
+       <div id="pay1jt-bca" style="display:none; text-align:center;">
+           <div style="width:60px; height:60px; background:rgba(200,169,90,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+           </div>
+           <h3 style="color:#fff; margin-bottom:20px; font-size:22px; font-family:var(--serif);">Instruksi Transfer BCA</h3>
+           <div style="background:rgba(255,255,255,0.03); padding:25px; border-radius:15px; border:1px solid rgba(200,169,90,0.2); margin-bottom:25px;">
+              <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;">Nomor Rekening</p>
+              <h2 style="font-family:monospace; color:var(--gold); font-size:32px; margin-bottom:8px; font-weight:bold; letter-spacing:2px;">7751146578</h2>
+              <p style="color:#fff; font-weight:600; font-size:16px;">A.n Delia Mutia</p>
+              <div style="margin:20px 0; border-bottom:1px solid rgba(255,255,255,0.1);"></div>
+              <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;">Total Transfer (Wajib Sesuai)</p>
+              <h2 id="pay1jt-bca-amount" style="color:#fff; font-size:28px; font-weight:bold;">Rp 1.000.xxx</h2>
+           </div>
+           <p style="color:rgba(255,255,255,0.6); font-size:13px; margin-bottom:20px; font-style:italic;">*Transfer sesuai nominal unik di atas agar terdeteksi otomatis.</p>
+           <button id="btn-confirm-wa-1jt" style="width:100%; padding:18px; border-radius:30px; background:#25D366; color:#fff; font-weight:700; border:none; cursor:pointer; font-size:16px; box-shadow:0 8px 20px rgba(37,211,102,0.3); transition:transform 0.2s;">Konfirmasi via WhatsApp</button>
+       </div>
+
+       <!-- Tripay Instructions (QRIS / VA) -->
+       <div id="pay1jt-tripay" style="display:none; text-align:center;">
+           <h3 style="color:#fff; margin-bottom:16px; font-size:22px; font-family:var(--serif);">Instruksi Pembayaran</h3>
+           <div style="background:rgba(255,255,255,0.03); padding:20px; border-radius:15px; border:1px solid rgba(200,169,90,0.2); margin-bottom:20px;">
+              <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:6px; text-transform:uppercase; letter-spacing:1px;">Reference</p>
+              <p id="pay1jt-tripay-ref" style="color:var(--gold); font-weight:700; font-size:15px; margin-bottom:14px; font-family:monospace;"></p>
+              <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:6px; text-transform:uppercase; letter-spacing:1px;">Total</p>
+              <p id="pay1jt-tripay-amount" style="color:#fff; font-weight:700; font-size:24px;"></p>
+           </div>
+           <div id="pay1jt-tripay-qris" style="display:none; margin-bottom:20px;">
+              <img id="pay1jt-tripay-qr-img" src="" alt="QRIS" style="width:240px; height:240px; border-radius:12px; border:1px solid rgba(255,255,255,0.1); background:#fff; padding:10px;"/>
+              <p style="color:rgba(255,255,255,0.6); font-size:13px; margin-top:12px;">Scan QRIS pakai GoPay / DANA / OVO / ShopeePay / Mobile Banking</p>
+           </div>
+           <div id="pay1jt-tripay-va" style="display:none; margin-bottom:20px;">
+              <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:6px; text-transform:uppercase; letter-spacing:1px;">Nomor Virtual Account</p>
+              <p id="pay1jt-tripay-vacode" style="color:var(--gold); font-weight:700; font-size:26px; font-family:monospace; letter-spacing:2px;"></p>
+           </div>
+           <a id="pay1jt-tripay-link" href="#" target="_blank" rel="noreferrer" style="display:block; text-decoration:none; margin-bottom:12px;">
+              <button style="width:100%; padding:16px; border-radius:30px; background:var(--gold); color:#000; font-weight:700; border:none; cursor:pointer; font-size:15px;">Buka Halaman Pembayaran</button>
+           </a>
+           <button id="btn-confirm-wa-1jt-tripay" style="width:100%; padding:16px; border-radius:30px; background:#25D366; color:#fff; font-weight:700; border:none; cursor:pointer; font-size:15px;">Konfirmasi via WhatsApp</button>
+       </div>
+    </div>
+</div>
+
+<script>
+// === PAY 1JT HANDLER ===
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (!urlParams.has('pay1jt')) return;
+
+  // Hide main landing
+  document.querySelectorAll('nav, header, section, .float-wa').forEach(el => { if(el) el.style.display = 'none'; });
+  document.body.style.background = '#0A0B10';
+  document.getElementById('payment-1jt-page').style.display = 'block';
+
+  const PIXEL_ID_1JT = '1275074677473419';
+  const AMOUNT_1JT = 1000000;
+
+  // CAPI AddPaymentInfo (Pixel + Server-Side)
+  const eventIdAPI = 'api1jt_' + new Date().getTime() + '_' + Math.floor(Math.random()*1000);
+  if(typeof fbq === 'function') fbq('track', 'AddPaymentInfo', {value: AMOUNT_1JT, currency: 'IDR'}, {eventID: eventIdAPI});
+  fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/capi-universal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        pixelId: PIXEL_ID_1JT,
+        eventName: 'AddPaymentInfo',
+        eventId: eventIdAPI,
+        eventSourceUrl: window.location.href,
+        secretName: 'SESI_1JT',
+        customData: { value: AMOUNT_1JT, currency: 'IDR' },
+        userData: { client_user_agent: navigator.userAgent }
+      })
+  }).catch(e => console.error(e));
+
+  // Render payment methods grid (follow darkfeminine pattern)
+  const methods = [
+    ['QRIS', 'QRIS', 'Semua e-Wallet & m-Banking'],
+    ['BCA_MANUAL', 'Manual BCA', 'Dicek 1-5 menit'],
+    ['BCAVA', 'BCA Virtual Account', 'Otomatis via BCA'],
+    ['BNIVA', 'BNI Virtual Account', 'Otomatis via BNI'],
+    ['BRIVA', 'BRI Virtual Account', 'Otomatis via BRI'],
+    ['MANDIRIVA', 'Mandiri Virtual Account', 'Otomatis via Mandiri'],
+    ['DANA', 'DANA', 'E-Wallet DANA'],
+    ['OVO', 'OVO', 'E-Wallet OVO'],
+    ['SHOPEEPAY', 'ShopeePay', 'E-Wallet ShopeePay']
+  ];
+  let selectedMethod = 'QRIS';
+  const grid = document.getElementById('pay1jt-methods');
+  grid.innerHTML = methods.map(([id, nm, sub]) => `
+     <div class="pay1jt-opt" data-id="${id}" style="padding:14px; border:2px solid ${id===selectedMethod?'var(--gold)':'rgba(255,255,255,0.1)'}; background:${id===selectedMethod?'rgba(200,169,90,0.08)':'transparent'}; border-radius:12px; cursor:pointer; transition:all 0.2s;">
+        <div style="color:#fff; font-weight:600; font-size:14px; margin-bottom:3px;">${nm}</div>
+        <div style="color:rgba(255,255,255,0.5); font-size:12px;">${sub}</div>
+     </div>`).join('');
+
+  grid.querySelectorAll('.pay1jt-opt').forEach(opt => {
+     opt.addEventListener('click', () => {
+        selectedMethod = opt.dataset.id;
+        grid.querySelectorAll('.pay1jt-opt').forEach(o => {
+           const sel = o.dataset.id === selectedMethod;
+           o.style.borderColor = sel ? 'var(--gold)' : 'rgba(255,255,255,0.1)';
+           o.style.background = sel ? 'rgba(200,169,90,0.08)' : 'transparent';
+        });
+     });
+  });
+
+  // Submit handler
+  document.getElementById('btn-process-pay1jt').addEventListener('click', async () => {
+     const name = document.getElementById('pay1jt-name').value.trim();
+     const email = document.getElementById('pay1jt-email').value.trim();
+     let phone = document.getElementById('pay1jt-phone').value.trim().replace(/\D/g, '');
+     if (!name || !email || !phone) return alert('Mohon lengkapi Nama, Email, dan No. WhatsApp Anda.');
+     if (phone.startsWith('0')) phone = '62' + phone.slice(1);
+     else if (!phone.startsWith('62')) phone = '62' + phone;
+
+     const btn = document.getElementById('btn-process-pay1jt');
+     btn.innerText = 'Memproses...'; btn.style.opacity = '0.7'; btn.disabled = true;
+
+     // BCA Manual path
+     if (selectedMethod === 'BCA_MANUAL') {
+        const rnd = Math.floor(Math.random() * 900) + 100;
+        const total = AMOUNT_1JT + rnd;
+        document.getElementById('pay1jt-bca-amount').innerText = 'Rp ' + total.toLocaleString('id-ID');
+        document.getElementById('pay1jt-form').style.display = 'none';
+        document.getElementById('pay1jt-benefits').style.display = 'none';
+        document.getElementById('pay1jt-bca').style.display = 'block';
+
+        document.getElementById('btn-confirm-wa-1jt').onclick = () => {
+           const eventIdPur = 'pur1jt_' + new Date().getTime() + '_' + Math.floor(Math.random()*1000);
+           if(typeof fbq === 'function') fbq('track', 'Purchase', {value: total, currency: 'IDR'}, {eventID: eventIdPur});
+           fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/capi-universal', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                 pixelId: PIXEL_ID_1JT, eventName: 'Purchase', eventId: eventIdPur,
+                 eventSourceUrl: window.location.href, secretName: 'SESI_1JT',
+                 customData: { value: total, currency: 'IDR' },
+                 userData: { em: email, ph: phone, fn: name.split(' ')[0], client_user_agent: navigator.userAgent }
+              })
+           }).catch(e => console.error(e));
+           window.location.href = `https://wa.me/62895325633487?text=${encodeURIComponent(`Hai Renata, saya sudah transfer Manual BCA untuk Sesi 1:1 60 Menit sebesar Rp ${total.toLocaleString('id-ID')}. Nama: ${name}`)}`;
+        };
+        return;
+     }
+
+     // Tripay path (QRIS / VA / E-Wallet)
+     try {
+        const payload = {
+           subscriptionType: 'sesi_1jt',
+           paymentMethod: selectedMethod,
+           userName: name,
+           userEmail: email,
+           phoneNumber: phone,
+           address: 'Digital', province: 'Digital', kota: 'Digital', kecamatan: 'Digital', kodePos: '00000',
+           amount: AMOUNT_1JT,
+           currency: 'IDR',
+           quantity: 1,
+           productName: 'eL Vision Sesi 1:1 · 60 Menit + Meditasi Clearing',
+           pageUrl: window.location.href
+        };
+        const response = await fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/tripay-create-payment', {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+
+        if (!data?.success) {
+           alert('Gateway Error: ' + (data?.error || 'Unknown error, hubungi admin via WhatsApp.'));
+           btn.innerText = 'Proses Pembayaran Rp 1.000.000'; btn.style.opacity = '1'; btn.disabled = false;
+           return;
+        }
+
+        // Redirect straight to Tripay checkout for e-wallets
+        const redirectMethods = ['DANA', 'OVO', 'SHOPEEPAY', 'LINKAJA', 'SAKUKU'];
+        if (data.checkoutUrl && redirectMethods.includes(selectedMethod)) {
+           window.location.href = data.checkoutUrl;
+           return;
+        }
+
+        // Show inline instructions for QRIS / VA
+        document.getElementById('pay1jt-form').style.display = 'none';
+        document.getElementById('pay1jt-benefits').style.display = 'none';
+        document.getElementById('pay1jt-tripay').style.display = 'block';
+        document.getElementById('pay1jt-tripay-ref').innerText = data.tripay_reference || data.reference || '-';
+        document.getElementById('pay1jt-tripay-amount').innerText = 'Rp ' + (data.amount || AMOUNT_1JT).toLocaleString('id-ID');
+
+        if (selectedMethod === 'QRIS' && data.qrUrl) {
+           document.getElementById('pay1jt-tripay-qris').style.display = 'block';
+           document.getElementById('pay1jt-tripay-qr-img').src = data.qrUrl;
+        } else if (data.pay_code) {
+           document.getElementById('pay1jt-tripay-va').style.display = 'block';
+           document.getElementById('pay1jt-tripay-vacode').innerText = data.pay_code;
+        }
+
+        if (data.checkoutUrl) document.getElementById('pay1jt-tripay-link').href = data.checkoutUrl;
+
+        document.getElementById('btn-confirm-wa-1jt-tripay').onclick = () => {
+           window.location.href = `https://wa.me/62895325633487?text=${encodeURIComponent(`Hai Renata, saya sudah membayar Sesi 1:1 60 Menit via ${selectedMethod}. Nama: ${name}. Ref: ${data.tripay_reference || data.reference || '-'}`)}`;
+        };
+     } catch (e) {
+        alert('System Error: ' + e.message);
+        btn.innerText = 'Proses Pembayaran Rp 1.000.000'; btn.style.opacity = '1'; btn.disabled = false;
+     }
+  });
+});
+</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
