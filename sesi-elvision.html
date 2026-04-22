@@ -278,8 +278,14 @@ src="https://www.facebook.com/tr?id=1275074677473419&ev=ViewContent&noscript=1"
 <body>
 
 <nav class="z1">
-  <div class="nav-logo">eL Vision</div>
-  <a href="#daftar" class="nav-cta">Daftar Sekarang</a>
+  <div class="nav-logo" style="display:flex; align-items:center; gap:20px;">
+    eL Vision
+    <div style="display:flex; gap:8px;">
+      <a href="?" id="lang-id" style="text-decoration:none; font-size:18px; filter:grayscale(0%); opacity:1; transition:all 0.2s;" title="Bahasa Indonesia">🇮🇩</a>
+      <a href="?en" id="lang-en" style="text-decoration:none; font-size:18px; filter:grayscale(100%); opacity:0.4; transition:all 0.2s;" title="English">🇺🇸</a>
+    </div>
+  </div>
+  <a href="#daftar" class="nav-cta" id="nav-btn-text">Daftar Sekarang</a>
 </nav>
 
 <!-- HERO -->
@@ -1262,6 +1268,47 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+});
+</script>
+<script>
+// Language Switcher Translater Logic
+document.addEventListener('DOMContentLoaded', () => {
+   const qs = new URLSearchParams(window.location.search);
+   if (qs.has('en')) {
+       const langId = document.getElementById('lang-id');
+       const langEn = document.getElementById('lang-en');
+       if(langId && langEn) {
+           langId.style.filter = 'grayscale(100%)';
+           langId.style.opacity = '0.4';
+           langEn.style.filter = 'grayscale(0%)';
+           langEn.style.opacity = '1';
+       }
+
+       // Core translations
+       const dict = {
+           'nav-btn-text': 'Register Now',
+       };
+       const classesDict = {
+           '.hero-since': 'Premium VIP 1:1 · Direct with Founder',
+           '.hero-title': '<em>eL Vision</em><br>Sessions',
+           '.hero-sub': 'Personalized 1-on-1 coaching directly with el Reyzandra. Not a seminar. Not a group. This is your private space to resolve root problems — accurately.',
+           '.hero-price-old': 'IDR 45.000.000 / 6 months',
+           '.hero-price-note': 'for 6 months · personal 1:1 with founder',
+           '.btn-primary': 'Book 6 Months Session',
+           '.btn-ghost': 'Who is it for?',
+           '.tag': 'Is this you?'
+       };
+
+       for (const [id, text] of Object.entries(dict)) {
+           const el = document.getElementById(id);
+           if(el) el.innerHTML = text;
+       }
+       for (const [cls, text] of Object.entries(classesDict)) {
+           document.querySelectorAll(cls).forEach(el => {
+               if(el) el.innerHTML = text;
+           });
+       }
+   }
 });
 </script>
 </body>
