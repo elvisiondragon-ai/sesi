@@ -1254,26 +1254,46 @@ document.body.addEventListener('click', function(e) {
 
        <!-- WHAT YOU GET -->
        <div id="pay1jt-benefits" style="background:rgba(200,169,90,0.05); border:1px solid rgba(200,169,90,0.2); border-radius:14px; padding:22px 22px 18px; margin-bottom:26px;">
-          <p style="color:var(--gold); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:14px; font-weight:500;">Apa yang Anda Dapatkan</p>
+          <p style="color:var(--gold); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:8px; font-weight:500;">Apa yang Anda Dapatkan</p>
+          <p style="color:rgba(255,255,255,0.5); font-size:12px; margin-bottom:18px; font-style:italic;">Durasi 60 menit · 1:1 privat langsung dengan Founder</p>
+
           <div style="display:flex; gap:12px; margin-bottom:14px; align-items:flex-start;">
              <span style="color:var(--gold); font-size:18px; line-height:1.4;">✦</span>
              <div>
-                <div style="color:#fff; font-weight:600; font-size:15px; margin-bottom:3px;">1× Call 60 Menit Privat</div>
-                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Full assessment akar masalah Anda — finansial, relasi, karier, atau mental block.</div>
+                <div style="color:#fff; font-weight:600; font-size:14.5px; margin-bottom:3px;">Menit 1–10 · Pembukaan & Pemetaan</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Identifikasi cepat kondisi Anda saat ini — di mana Anda berdiri, apa yang terasa macet, dan apa yang ingin dicapai.</div>
              </div>
           </div>
+
           <div style="display:flex; gap:12px; margin-bottom:14px; align-items:flex-start;">
              <span style="color:var(--gold); font-size:18px; line-height:1.4;">✦</span>
              <div>
-                <div style="color:#fff; font-weight:600; font-size:15px; margin-bottom:3px;">Meditasi Clearing Terpandu</div>
-                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Meditasi langsung dipandu untuk menclearkan beban mental & blokade bawah sadar.</div>
+                <div style="color:#fff; font-weight:600; font-size:14.5px; margin-bottom:3px;">Menit 10–35 · Full Assessment Akar Masalah</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Bedah mendalam penyebab sebenarnya — finansial, relasi, karier, atau mental block. Bukan gejala, tapi akarnya. Anda akan tahu persis kenapa hal itu terus terulang.</div>
              </div>
           </div>
-          <div style="display:flex; gap:12px; align-items:flex-start;">
+
+          <div style="display:flex; gap:12px; margin-bottom:14px; align-items:flex-start;">
              <span style="color:var(--gold); font-size:18px; line-height:1.4;">✦</span>
              <div>
-                <div style="color:#fff; font-weight:600; font-size:15px; margin-bottom:3px;">Garansi Uang Kembali 100%</div>
-                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Jika setelah sesi Anda merasa tidak ada manfaat sama sekali, uang Anda kami kembalikan penuh.</div>
+                <div style="color:#fff; font-weight:600; font-size:14.5px; margin-bottom:3px;">Menit 35–55 · Meditasi Clearing Terpandu</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Meditasi langsung dipandu untuk menclearkan beban mental, emosi yang terjebak, dan blokade bawah sadar yang selama ini menahan Anda.</div>
+             </div>
+          </div>
+
+          <div style="display:flex; gap:12px; margin-bottom:14px; align-items:flex-start;">
+             <span style="color:var(--gold); font-size:18px; line-height:1.4;">✦</span>
+             <div>
+                <div style="color:#fff; font-weight:600; font-size:14.5px; margin-bottom:3px;">Menit 55–60 · Insight & Langkah Lanjutan</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Rangkuman insight yang didapat dan rekomendasi langkah kecil yang bisa langsung Anda lakukan pulang dari sesi ini.</div>
+             </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; padding-top:14px; border-top:1px solid rgba(200,169,90,0.15);">
+             <span style="color:var(--gold); font-size:18px; line-height:1.4;">🛡</span>
+             <div>
+                <div style="color:#fff; font-weight:600; font-size:14.5px; margin-bottom:3px;">Garansi Uang Kembali 100%</div>
+                <div style="color:rgba(255,255,255,0.6); font-size:13px; line-height:1.6;">Jika setelah sesi Anda merasa tidak ada manfaat sama sekali, uang Anda kami kembalikan penuh — tanpa pertanyaan.</div>
              </div>
           </div>
        </div>
@@ -1357,7 +1377,7 @@ document.addEventListener('DOMContentLoaded', () => {
         eventName: 'AddPaymentInfo',
         eventId: eventIdAPI,
         eventSourceUrl: window.location.href,
-        secretName: 'SESI_1JT',
+        secretName: 'VIP_30JT',
         customData: { value: AMOUNT_1JT, currency: 'IDR' },
         userData: { client_user_agent: navigator.userAgent }
       })
@@ -1423,7 +1443,7 @@ document.addEventListener('DOMContentLoaded', () => {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
                  pixelId: PIXEL_ID_1JT, eventName: 'Purchase', eventId: eventIdPur,
-                 eventSourceUrl: window.location.href, secretName: 'SESI_1JT',
+                 eventSourceUrl: window.location.href, secretName: 'VIP_30JT',
                  customData: { value: total, currency: 'IDR' },
                  userData: { em: email, ph: phone, fn: name.split(' ')[0], client_user_agent: navigator.userAgent }
               })
@@ -1436,7 +1456,7 @@ document.addEventListener('DOMContentLoaded', () => {
      // Tripay path (QRIS / VA / E-Wallet)
      try {
         const payload = {
-           subscriptionType: 'sesi_1jt',
+           subscriptionType: 'universal',
            paymentMethod: selectedMethod,
            userName: name,
            userEmail: email,
@@ -1448,9 +1468,14 @@ document.addEventListener('DOMContentLoaded', () => {
            productName: 'eL Vision Sesi 1:1 · 60 Menit + Meditasi Clearing',
            pageUrl: window.location.href
         };
+        const SUPABASE_ANON_KEY_1JT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5scmdkaHBtc2l0dHV3aWlpbmRxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0NDM2MDUsImV4cCI6MjA4OTgwMzYwNX0.2zDvAe28Ho3BWUZC2Sxk7-PopwW0do2139xelPgEwLo';
         const response = await fetch('https://nlrgdhpmsittuwiiindq.supabase.co/functions/v1/tripay-create-payment', {
            method: 'POST',
-           headers: { 'Content-Type': 'application/json' },
+           headers: {
+              'Content-Type': 'application/json',
+              'apikey': SUPABASE_ANON_KEY_1JT,
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY_1JT}`
+           },
            body: JSON.stringify(payload)
         });
         const data = await response.json();
